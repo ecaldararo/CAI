@@ -1,0 +1,7 @@
+H:\Escritorio\GitHub\CAI\Calculadora\Calculadora\bin\Debug\Calculadora.exe.config
+H:\Escritorio\GitHub\CAI\Calculadora\Calculadora\bin\Debug\Calculadora.exe
+H:\Escritorio\GitHub\CAI\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
+H:\Escritorio\GitHub\CAI\Calculadora\Calculadora\obj\Debug\Calculadora.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\Calculadora\Calculadora\obj\Debug\Calculadora.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\Calculadora\Calculadora\obj\Debug\Calculadora.exe
+H:\Escritorio\GitHub\CAI\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
