@@ -1,0 +1,7 @@
+H:\Escritorio\GitHub\CAI\MetodosCambiantes\MetodosCambiantes\bin\Debug\MetodosCambiantes.exe.config
+H:\Escritorio\GitHub\CAI\MetodosCambiantes\MetodosCambiantes\bin\Debug\MetodosCambiantes.exe
+H:\Escritorio\GitHub\CAI\MetodosCambiantes\MetodosCambiantes\bin\Debug\MetodosCambiantes.pdb
+H:\Escritorio\GitHub\CAI\MetodosCambiantes\MetodosCambiantes\obj\Debug\MetodosCambiantes.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\MetodosCambiantes\MetodosCambiantes\obj\Debug\MetodosCambiantes.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\MetodosCambiantes\MetodosCambiantes\obj\Debug\MetodosCambiantes.exe
+H:\Escritorio\GitHub\CAI\MetodosCambiantes\MetodosCambiantes\obj\Debug\MetodosCambiantes.pdb
