@@ -13,7 +13,10 @@ namespace MetodosCambiantes
             //-Realizar un método que afecte o cambien un estado(atributos).
             //-Realizar un método que se comporte de forma distinta dependiendo del estado(el valor de algún atributo).
 
-            Artefactos primera = new Artefactos();
+            Artefactos primera = new Artefactos(1);
+            Artefactos segunda = new Artefactos(2);
+            Artefactos tercera = new Artefactos(3);
+
 
             Console.WriteLine("Tablero de control de Luz/n 1.Encender/Apagar /n 2.Salir");
 
@@ -26,6 +29,8 @@ namespace MetodosCambiantes
                 if (entrada == 1)
                 {
                     primera.AccionarLlave();
+                    segunda.AccionarLlave();
+                    tercera.AccionarLlave();
                 }
             }
 

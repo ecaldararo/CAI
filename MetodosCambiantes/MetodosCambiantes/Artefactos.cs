@@ -8,26 +8,36 @@ namespace MetodosCambiantes
 {
     class Artefactos
     {
-        int id = 0;
+        int _id;
+        private int _idartefacto;
         bool estado;
+        private string nombre;
 
-        public Artefactos()
+        //public int IdArtefacto { get => this.idArtefacto; set => this.idArtefacto = value; }
+
+        public int IdArtefacto { get; set; }
+        public Artefactos(int id)
         {
-            id = id++;
-            estado = false;
+            _id = id;
+            _idartefacto ++;
+            estado = 
+                ;
         }
+
         public void AccionarLlave()
         {
             if (estado == false)
             {
                 estado = true;
-                Console.WriteLine("Luz encendida");
+                Console.WriteLine("Luz encendida de artefacto " + _id);
             }
             else
             {
                 estado = false;
-                Console.WriteLine("Luz apagada");
+                Console.WriteLine("Luz apagada de artefacto " + _id);
             }
         }
+        
+        
     }
 }
