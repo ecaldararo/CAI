@@ -19,6 +19,8 @@ namespace LibreriaBotones
             Id = id;
             Description = desc;
         }
+        //Exception e
+        
         public void CrearBoton(int id, string description)
         {
 

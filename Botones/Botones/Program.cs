@@ -7,7 +7,7 @@ using LibreriaBotones;
 
 namespace ProyectoBotones
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -45,48 +45,40 @@ namespace ProyectoBotones
                     "4-Mostrar Descripción \n" +
                     "5-Salir");
 
-                int entrada = Validadores.PedirInt(1, 5);
+                int entrada = 0;
+                bool menu = false;
+                do
+                {
+                    try
+                    {
+                        entrada = Validadores.PedirInt(1, 5);
+                        menu = true;
+                    }
+                    catch (Exception iex)
+                    {
+                        Console.WriteLine(iex.Message);
+                    }
+                } while (menu == false);
+                
+                
 
                 switch (entrada)
                 {
                     case 1:
                         Console.WriteLine("\n--Lista de Botones--");
-                        foreach (Boton item in lista)
-                        {
-                            Console.WriteLine("Código: " + item.Id + "\t Descripción: " + item.Description);
-                        }
+                        ControladorProgram.Listar(lista);
                         break;
                     case 2:
                         Console.WriteLine("\n--Agregar Botón--");
-
-                        Console.WriteLine("Ingrese una descripción.");
-                        string descripcion = Validadores.PedirString();
-
-                        Console.WriteLine("Ingrese un código.");
-                        int codigo = Validadores.PedirInt();
-                        while (Controlador.Agregar(lista, codigo, descripcion) == false) 
-                        {
-                            Console.WriteLine("Código inválido, ingrese otro código.");
-                            codigo = Validadores.PedirInt();
-                        } 
-
+                        ControladorProgram.Agregar(lista);
                         break;
                     case 3:
                         Console.WriteLine("\n--Eliminar Botón--");
-                        do
-                        {
-                            codigo = Validadores.PedirInt();
-                        } while (!lista.Exists(item => item.Id == codigo));
-                        lista.RemoveAll(item => item.Id == codigo);
+                        ControladorProgram.Eliminar(lista);
                         break;
                     case 4:
                         Console.WriteLine("\n--Mostrar Descripción--\nIngrese un código");
-                        codigo = Validadores.PedirInt();
-                        while (!lista.Exists(item => item.Id == codigo)) {
-                            Console.WriteLine("\n**Botón inexistente** \nIngrese otro código:");
-                            codigo = Validadores.PedirInt();
-                        }
-                        Console.WriteLine("La descripción es: " + lista.Find(item => item.Id == codigo).Description);
+                        ControladorProgram.MostrarDescripcion(lista);
                         break;
                     case 5:
                         exit = true;
@@ -97,7 +89,7 @@ namespace ProyectoBotones
 
             }
         }
-    }
+        
     public class Validadores
     {
         public static int PedirInt(int desde, int hasta)
@@ -112,7 +104,8 @@ namespace ProyectoBotones
                     Console.WriteLine("--- El ingreso es inválido, vuelva a intentarlo ---");
                 } else if (salida < desde || salida > hasta)
                 {
-                    Console.WriteLine("--- Ingresó un número fuera del rango. Ingrese un número del " + desde + " al " + hasta + " ---");
+                    throw new IndexOutOfRangeException("Ingresó un número fuera del rango.");
+                    //Console.WriteLine("--- Ingresó un número fuera del rango. Ingrese un número del " + desde + " al " + hasta + " ---");
                 }
 
 
