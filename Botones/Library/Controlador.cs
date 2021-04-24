@@ -8,9 +8,6 @@ namespace LibreriaBotones
 {
     public class Controlador
     {
-        public void AgregarBoton()
-        {
-
-        }
+        
     }
 }

@@ -22,16 +22,16 @@ namespace ProyectoBotones
             //- Hacer una exception custom(ej.BotonYaExistenteException)
 
 
-            List<Botones> listaBotones = new List<Botones>();
+            List<Boton> listaBotones = new List<Boton>();
 
             List<int> ids = new List<int>();
 
-            Menu();
+            Menu(listaBotones);
 
             Console.ReadKey();
 
         }
-        public static void Menu()
+        public static void Menu(List<Boton> lista)
         {
             bool exit = false;
 
@@ -50,13 +50,16 @@ namespace ProyectoBotones
                 switch (entrada)
                 {
                     case 1:
-                        Botones.AgregarBoton();
+                        //lista.Listar();
                         break;
                     case 2:
+                        lista.Add(new Boton(Validadores.PedirInt(), Validadores.PedirString()));
                         break;
                     case 3:
+                        //lista.EliminarBoton(id);
                         break;
                     case 4:
+                        //lista.MostrarDescripcionBoton(id);
                         break;
                     case 5:
                         exit = true;
@@ -87,6 +90,33 @@ namespace ProyectoBotones
 
 
             } while (salida < desde || salida > hasta);
+
+            return salida;
+
+        }
+        public static int PedirInt()
+        {
+
+            Console.WriteLine("--- Ingrese un número superior a cero ---");
+            int salida = 0;
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out salida))
+                {
+                    Console.WriteLine("--- El ingreso es inválido, vuelva a intentarlo ---");
+                }
+
+            } while (salida <= 0);
+
+            return salida;
+
+        }
+        public static string PedirString()
+        {
+
+            Console.WriteLine("--- Ingrese un texto ---");
+            
+            string salida = Console.ReadLine();
 
             return salida;
 
