@@ -50,16 +50,38 @@ namespace ProyectoBotones
                 switch (entrada)
                 {
                     case 1:
-                        //lista.Listar();
+                        Console.WriteLine("\n--Lista de Botones--");
+                        foreach (Boton item in lista)
+                        {
+                            Console.WriteLine("Código: " + item.Id + "\t Descripción: " + item.Description);
+                        }
                         break;
                     case 2:
-                        lista.Add(new Boton(Validadores.PedirInt(), Validadores.PedirString()));
+                        int codigo;
+                        Console.WriteLine("\n--Agregar Botón--");
+                        do
+                        {
+                            codigo = Validadores.PedirInt();
+                        } while (lista.Exists(item => item.Id == codigo));
+                        
+                        lista.Add(new Boton(codigo, Validadores.PedirString()));
                         break;
                     case 3:
-                        //lista.EliminarBoton(id);
+                        Console.WriteLine("\n--Eliminar Botón--");
+                        do
+                        {
+                            codigo = Validadores.PedirInt();
+                        } while (!lista.Exists(item => item.Id == codigo));
+                        lista.RemoveAll(item => item.Id == codigo);
                         break;
                     case 4:
-                        //lista.MostrarDescripcionBoton(id);
+                        Console.WriteLine("\n--Mostrar Descripción--\nIngrese un código");
+                        codigo = Validadores.PedirInt();
+                        while (!lista.Exists(item => item.Id == codigo)) {
+                            Console.WriteLine("\n**Botón inexistente** \nIngrese otro código:");
+                            codigo = Validadores.PedirInt();
+                        }
+                        Console.WriteLine("La descripción es: " + lista.Find(item => item.Id == codigo).Description);
                         break;
                     case 5:
                         exit = true;
