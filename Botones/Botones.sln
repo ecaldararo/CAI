@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoBotones", "Botones\ProyectoBotones.csproj", "{20AAB58F-8F39-4EDE-9EBA-B909B5DF9A1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaBotones", "Library\LibreriaBotones.csproj", "{E499F51A-9BDC-4862-ABCE-36F717A1A85F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20AAB58F-8F39-4EDE-9EBA-B909B5DF9A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AAB58F-8F39-4EDE-9EBA-B909B5DF9A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AAB58F-8F39-4EDE-9EBA-B909B5DF9A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AAB58F-8F39-4EDE-9EBA-B909B5DF9A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E499F51A-9BDC-4862-ABCE-36F717A1A85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E499F51A-9BDC-4862-ABCE-36F717A1A85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E499F51A-9BDC-4862-ABCE-36F717A1A85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E499F51A-9BDC-4862-ABCE-36F717A1A85F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A83C5CC8-53A3-4B90-AB3F-DB7AED72E72D}
+	EndGlobalSection
+EndGlobal
