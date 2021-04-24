@@ -57,14 +57,21 @@ namespace ProyectoBotones
                         }
                         break;
                     case 2:
-                        int codigo;
                         Console.WriteLine("\n--Agregar Botón--");
-                        do
+
+                        Console.WriteLine("Ingrese una descripción.");
+                        string descripcion = Validadores.PedirString();
+
+                        Console.WriteLine("Ingrese un código.");
+                        int codigo = Validadores.PedirInt();
+                        while (Controlador.Agregar(lista, codigo, descripcion) == false) 
                         {
+                            Console.WriteLine("Código inválido, ingrese otro código.");
                             codigo = Validadores.PedirInt();
-                        } while (lista.Exists(item => item.Id == codigo));
-                        
-                        lista.Add(new Boton(codigo, Validadores.PedirString()));
+                        } 
+
+
+                        //lista.Add(new Boton(codigo, Validadores.PedirString()));
                         break;
                     case 3:
                         Console.WriteLine("\n--Eliminar Botón--");
