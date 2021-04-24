@@ -70,8 +70,6 @@ namespace ProyectoBotones
                             codigo = Validadores.PedirInt();
                         } 
 
-
-                        //lista.Add(new Boton(codigo, Validadores.PedirString()));
                         break;
                     case 3:
                         Console.WriteLine("\n--Eliminar Botón--");
