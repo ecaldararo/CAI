@@ -41,10 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camisa.cs" />
-    <Compile Include="Pantalon.cs" />
-    <Compile Include="TipoIndumentaria.cs" />
-    <Compile Include="Indumentaria.cs" />
+    <Compile Include="Indumentaria\Camisa.cs" />
+    <Compile Include="Indumentaria\Pantalon.cs" />
+    <Compile Include="Indumentaria\IndumentariaCasual.cs" />
+    <Compile Include="Indumentaria\IndumentariaFormal.cs" />
+    <Compile Include="Indumentaria\IndumentariaDeportiva.cs" />
+    <Compile Include="Indumentaria\TipoIndumentaria.cs" />
+    <Compile Include="Indumentaria\Indumentaria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="EstadoVenta.cs" />
     <Compile Include="VentaItem.cs" />
