@@ -66,8 +66,13 @@ namespace LibreriaExpendedora
 
         public string GetBalance()
         {
+            int cant = 0;
+            foreach (Lata i in _latas)
+            {
+                cant += i.Cantidad;
+            }
             if (_encendida == true)
-                return _dinero.ToString();
+                return "Dinero: " + _dinero.ToString() + "\tCantidad: " + cant.ToString();
             else
                 return "";
         }

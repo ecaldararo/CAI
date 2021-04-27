@@ -124,7 +124,7 @@ namespace ProyectoExpendedora
 
         private static void ObtenerBalance(Expendedora expendedora)
         {
-            expendedora.GetBalance();
+            Console.WriteLine(expendedora.GetBalance());
         }
         private static void MostrarStock(Expendedora expendedora)
         {
