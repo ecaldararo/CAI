@@ -43,6 +43,8 @@ namespace ProyectoVentaRepuestos
                 " 6- Salir \n" +
                 "--------------------");
 
+                Console.WriteLine("Eliga una opción...");
+
                 int opcion = Val.PedirOpcion(1, 6);
 
                 switch (opcion)
@@ -60,6 +62,7 @@ namespace ProyectoVentaRepuestos
                         AgregarStock(comercio);
                         break;
                     case 5:
+                        QuitarStock(comercio);
                         break;
                     case 6:
                         menu = false;
@@ -71,11 +74,13 @@ namespace ProyectoVentaRepuestos
         }
         static void AgregarRepuesto(Comercio comercio)
         {
-            Repuesto rep = new Repuesto(Val.PedirIntDesde(0), Val.PedirNombre(), Val.PedirPrecio(), new Categoria(PedirCategoria()), Val.PedirCantidad());
+            Console.WriteLine("Agregando Nuevo Repuesto...");
+            Repuesto rep = new Repuesto(Val.PedirCodigoDesde(0), Val.PedirNombre(), Val.PedirPrecio(), new Categoria(PedirCategoria()), Val.PedirCantidad());
             comercio.AgregarRepuesto(rep);
         }
         static void QuitarRepuesto(Comercio comercio)
         {
+            Console.WriteLine("Quitando Repuesto...");
             comercio.QuitarRepuesto(Val.PedirIntDesde(0));
         }
         static string PedirCategoria()
@@ -86,6 +91,7 @@ namespace ProyectoVentaRepuestos
         }
         static void ListarProductos(Comercio comercio)
         {
+            Console.WriteLine("Listando Productos...");
             foreach (Repuesto i in comercio.ListaProductos)
             {
                 Console.WriteLine("Cod: " + i.Codigo + " Nombre: " + i.Nombre + " Cantidad: " + i.Stock);
@@ -94,6 +100,7 @@ namespace ProyectoVentaRepuestos
         }
         static void AgregarStock(Comercio comercio)
         {
+            Console.WriteLine("Agregar Stock");
             bool flag = false;
             do
             {
@@ -108,6 +115,24 @@ namespace ProyectoVentaRepuestos
                 }
             } while (flag == false);
             
+        }
+        static void QuitarStock(Comercio comercio)
+        {
+            Console.WriteLine("Quitar Stock");
+            bool flag = false;
+            do
+            {
+                try
+                {
+                    comercio.QuitarStock(Val.PedirIntDesde(0), Val.PedirCantidad());
+                    flag = true;
+                }
+                catch (CodigoInvalidoException cie)
+                {
+                    Console.WriteLine(cie.Message);
+                }
+            } while (flag == false);
+
         }
     }
 }
