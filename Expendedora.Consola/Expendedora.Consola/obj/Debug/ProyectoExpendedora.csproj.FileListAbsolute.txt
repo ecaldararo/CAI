@@ -1,0 +1,10 @@
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\Expendedora.Consola.exe.config
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\Expendedora.Consola.exe
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\Expendedora.Consola.pdb
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\LibreriaExpendedora.dll
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\LibreriaExpendedora.pdb
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\ProyectoExpendedora.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\ProyectoExpendedora.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\ProyectoExpendedora.csproj.CopyComplete
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\Expendedora.Consola.exe
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\Expendedora.Consola.pdb

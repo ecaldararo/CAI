@@ -10,19 +10,23 @@ namespace LibreriaExpendedora
     {
         public List<Lata> _latas;
         private string _proveedor;
-        private int _capacidad;
+        private int _capacidad = 100;
         private double _dinero;
         private bool _encendida;
 
+        public int Capacidad { get => _capacidad; set => _capacidad = value; }
+
         public Expendedora()
         {
-
+            _latas = new List<Lata>();
+            _encendida = false;
         }
 
         public void AgregarLata(Lata lata)
         {
+            
             if (_encendida == true)
-                if (_latas.Count() >= _capacidad)
+                if (_latas.Count() >= Capacidad)
                 {
                     throw new CapacidadInsuficienteException();
                 }
@@ -30,7 +34,7 @@ namespace LibreriaExpendedora
                 {
                     _latas.Add(lata);
                 }
-                
+
         }
 
         public Lata ExtraerLata(string codigo, double dinero)
@@ -44,7 +48,7 @@ namespace LibreriaExpendedora
                 if (_latas.First(x => x.Codigo == codigo).Precio == dinero)
                 {
                     _dinero += dinero;
-                    _latas.RemoveAll(x => x.Codigo == codigo);
+                    //_latas.RemoveAll(x => x.Codigo == codigo);
                 }
                 else
                 {
@@ -70,7 +74,7 @@ namespace LibreriaExpendedora
 
         public int GetCapacidadRestante()
         {
-            return _capacidad - _latas.Count();
+            return Capacidad - _latas.Count();
         }
 
         public void EncenderMaquina()

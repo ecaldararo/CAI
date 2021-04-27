@@ -6,23 +6,40 @@ using System.Threading.Tasks;
 
 namespace LibreriaExpendedora
 {
-    class SinStockException : Exception
+    public class SinStockException : Exception
     {
+        public SinStockException() : base("No hay stock disponible")
+        {
 
+        }
     }
 
-    class CapacidadInsuficienteException : Exception
+    public class CapacidadInsuficienteException : Exception
     {
+        public CapacidadInsuficienteException(string msg) : base (msg)
+        {
 
+        }
+
+        public CapacidadInsuficienteException() : base("Capacidad Insuficiente")
+        {
+
+        }
     }
 
-    class DineroInsuficienteException : Exception
+    public class DineroInsuficienteException : Exception
     {
+        public DineroInsuficienteException() : base("Dinero Insuficiente")
+        {
 
+        }
     }
-    
-    class CodigoInvalidoException : Exception
-    {
 
+    public class CodigoInvalidoException : Exception
+    {
+        public CodigoInvalidoException() : base("Código Inválido")
+        {
+
+        }
     }
 }
