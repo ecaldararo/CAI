@@ -1,0 +1,6 @@
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Exceptions\bin\Debug\Exceptions.dll
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Exceptions\bin\Debug\Exceptions.pdb
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Exceptions\obj\Debug\Exceptions.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Exceptions\obj\Debug\Exceptions.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Exceptions\obj\Debug\Exceptions.dll
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Exceptions\obj\Debug\Exceptions.pdb

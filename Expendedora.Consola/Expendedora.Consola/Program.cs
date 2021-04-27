@@ -15,17 +15,7 @@ namespace ProyectoExpendedora
             Console.WriteLine("Máquina Expendedora\nPresione cualquier tecla para encenderla");
             Console.ReadKey();
             exp.EncenderMaquina(); // se enciende la máquina
-            Console.WriteLine("Máquina Encendida");
-
-            /*List<Lata> _latas = new List<Lata>();
-            Lata lata2 = new Lata("1", "Coca", 5);
-            _latas.Add(lata2);
-            
-            foreach (Lata element in _latas)
-            {
-                Console.WriteLine("CO" + element.Codigo + ") " + element.Nombre + " [" + element.Cantidad + "]");
-            }*/
-
+            Console.WriteLine("***Máquina Encendida***");
 
             MenuPrincipal(exp);
 

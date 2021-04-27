@@ -1,0 +1,9 @@
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\bin\Debug\Ventas.dll
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\bin\Debug\Ventas.pdb
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\bin\Debug\Exceptions.dll
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\bin\Debug\Exceptions.pdb
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\obj\Debug\LibreriasVentaRepuestos.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\obj\Debug\LibreriasVentaRepuestos.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\obj\Debug\LibreriasVentaRepuestos.csproj.CopyComplete
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\obj\Debug\Ventas.dll
+H:\Escritorio\GitHub\CAI\VentaRepuestos\Ventas\obj\Debug\Ventas.pdb
