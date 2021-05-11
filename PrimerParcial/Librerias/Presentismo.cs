@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Exceptions;
 
 namespace Librerias
 {
@@ -10,7 +11,7 @@ namespace Librerias
     {
 
         private List<Preceptor> _preceptores;
-        private List<Alumno> _alumnos;
+        private static List<Alumno> _alumnos;
         private List<Asistencia> _asistencias;
 
 
@@ -30,11 +31,26 @@ namespace Librerias
             _alumnos.Add(new AlumnoOyente(321, "Alejandro", "Medina"));
         }
 
-        //private bool AsistenciaRegistrada(string fecha)
-        //{
-        //
-        //    return;
-        //}
+        private bool AsistenciaRegistrada(string fecha)
+        {
+            List<Asistencia> lista = this.GetAsistenciasPorFecha(fecha);
+
+            if(!this._asistencias.Exists(x => x.FechaAsistencia == fecha))
+            {
+                foreach (Alumno i in _alumnos)
+                {
+                    Asistencia asistencia = new Asistencia(GetPreceptorActivo(), fecha, i, true);
+                    AgregarAsistencia(_asistencias, asistencia);
+                }
+                
+            }
+            else
+            {
+                throw new AsistenciaExistenteEseDiaException();
+            }
+
+            return true;
+        }
         
         private int GetCantidadAlumnosRegulares()
         {
@@ -51,18 +67,18 @@ namespace Librerias
             Preceptor preceptor = _preceptores.SingleOrDefault(x => x.Activo == true); // puede fallar
             return preceptor;
         }
-        //public List<Alumno> GetListaAlumnos()
-        //{
-        //    return;
-        //}
-        //public void AgregarAsistencia(List<Asistencia> asistencia)
-        //{
-        //    asistencia.Add();
-        //}
-        //
-        //public List<Asistencia> GetAsistenciasPorFecha(string fecha)
-        //{
-        //
-        //}
+        public static List<Alumno> GetListaAlumnos()
+        {
+            return _alumnos;
+        }
+        public void AgregarAsistencia(List<Asistencia> lista)
+        {
+            AddRange(lista);
+        }
+        
+        public List<Asistencia> GetAsistenciasPorFecha(string fecha)
+        {
+            return _asistencias.FindAll(x => x.FechaAsistencia == fecha);
+        }
     }
 }

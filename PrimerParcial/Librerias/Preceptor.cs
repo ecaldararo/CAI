@@ -21,13 +21,9 @@ namespace Librerias
 
         public bool Activo { get => _activo;  }
 
-        public override string ToString()
-        {
-            return $"{this._apellido} - {this._legajo}";
-        }
         internal override string Display()
         {
-            return "";
+            return $"{this._apellido} - {this._legajo}";
         }
     }
 }

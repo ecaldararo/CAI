@@ -13,8 +13,17 @@ namespace Librerias
         private Preceptor _preceptor;
         private Alumno _alumno;
         private bool _estaPresente;
-        public string FechaAsistencia;
 
+        public Asistencia(Preceptor preceptor, string fechaAsistencia, Alumno alumno, bool estaPresente )
+        {
+            _preceptor = preceptor;
+            _fechaAsistencia = fechaAsistencia;
+            _alumno = alumno;
+            _estaPresente = estaPresente;
+
+        }
+
+        public string FechaAsistencia { get => _fechaAsistencia; set => _fechaAsistencia = value; }
 
         public override string ToString()
         {

@@ -52,16 +52,25 @@ namespace PrimerParcial.Consola
         static void TomarAsistencia(Preceptor p)
         {
             // Ingreso fecha
-            DateTime fecha = Val.PedirFecha();
+            string fecha = Val.PedirFecha();
             // Listar los alumnos
+            List<Alumno> lista = Presentismo.GetListaAlumnos();
+            foreach(Alumno i in lista)
+            {
+                i.ToString();
+            }
             // para cada alumno solo preguntar si está presente
+            foreach (Alumno i in lista)
+            {
+                i.ToString();
+            }
             // agrego la lista de asistencia
             // Error: mostrar el error y que luego muestre el menú nuevamente
         }
         static void MostrarAsistencia()
         {
             // ingreso fecha
-            DateTime fecha = Val.PedirFecha();
+            string fecha = Val.PedirFecha();
             // muestro el toString de cada asistencia
         }
 

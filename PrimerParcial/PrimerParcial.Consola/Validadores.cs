@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -165,56 +166,79 @@ namespace PrimerParcial.Consola
 
             return texto;
         }
-        public static DateTime PedirFecha()
+        public static string PedirFecha()
         {
-            int year;
-            int month;
-            int day;
-            int hour;
-            int minute;
-            int second;
+           
+            Console.WriteLine("Ingrese el año, mes y día, con el formato AAAA-MM-DD.");
+            string fecha = Console.ReadLine();
+            
 
-            Console.WriteLine("Ingrese el año.");
-            year = PedirInt(2000, 2030);
-            Console.WriteLine("Ingrese el mes.");
-            month = PedirInt(1, 12);
-            Console.WriteLine("Ingrese el día.");
-            day = PedirInt(1, 31);
-            Console.WriteLine("Ingrese la hora.");
-            hour = Val.PedirInt(0, 23);
-            Console.WriteLine("Ingrese los minutos.");
-            minute = Val.PedirInt(0, 59);
-            Console.WriteLine("Ingrese los segundos.");
-            second = Val.PedirInt(0, 59);
+            return fecha;
 
-            DateTime date;
-            bool flag = false;
-            do
+        }
+
+        public static string GetStringInput(string message)
+        {
+            Console.WriteLine(message);
+            string input = Console.ReadLine();
+            if (input == "")
             {
-                if (!DateTime.TryParse((year + month + day + hour + minute + second).ToString(), out date))
-                {
-                    Console.WriteLine("Error, vuelva a intentarlo");
-                    Console.WriteLine("Ingrese el año.");
-                    year = PedirInt(2000, 2030);
-                    Console.WriteLine("Ingrese el mes.");
-                    month = PedirInt(1, 12);
-                    Console.WriteLine("Ingrese el día.");
-                    day = PedirInt(1, 31);
-                    Console.WriteLine("Ingrese la hora.");
-                    hour = Val.PedirInt(0, 23);
-                    Console.WriteLine("Ingrese los minutos.");
-                    minute = Val.PedirInt(0, 59);
-                    Console.WriteLine("Ingrese los segundos.");
-                    second = Val.PedirInt(0, 59);
-                }
-                else
-                {
-                    flag = true;
-                }
-            } while (flag == false);
+                Console.WriteLine("Debes ingresar un valor");
+                return GetStringInput(message);
+            }
+            else
+            {
+                return input;
+            }
+        }
 
-            return date;
+        public static double GetDoubleInput(string message)
+        {
 
+            Console.WriteLine(message);
+            string input = Console.ReadLine();
+
+            if (double.TryParse(input, out double retorno))
+            {
+                return retorno;
+            }
+            else
+            {
+                Console.WriteLine("Debes ingresar un numero");
+                return GetDoubleInput(message);
+            }
+        }
+
+        public static int GetIntegerInput(string message)
+        {
+            Console.WriteLine(message);
+            string input = Console.ReadLine();
+
+            if (int.TryParse(input, out int retorno))
+            {
+                return retorno;
+            }
+            else
+            {
+                Console.WriteLine("Debes ingresar un numero entero");
+                return GetIntegerInput(message);
+            }
+        }
+
+        public static DateTime GetDateInput(string message)
+        {
+            Console.WriteLine(message);
+            string input = Console.ReadLine();
+
+            if (DateTime.TryParse(input, out DateTime retorno))
+            {
+                return retorno;
+            }
+            else
+            {
+                Console.WriteLine("Debes ingresar una fecha con formato valido");
+                return GetDateInput(message);
+            }
         }
     }
 }

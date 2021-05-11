@@ -15,7 +15,7 @@ namespace Exceptions
 
         public AsistenciaExistenteEseDiaException() : base("Asistencia Existente Ese Día.")
         {
-
+            
         }
     }
 

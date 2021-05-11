@@ -14,7 +14,7 @@ namespace Librerias
 
         internal override string Display()
         {
-            return "";
+            return $"{this._nombre} ({this.Registro})";
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Librerias
 
         public override string ToString()
         {
-            return base.ToString();
+            return Display();
         }
 
         internal abstract string Display();
