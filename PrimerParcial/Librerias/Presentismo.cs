@@ -40,7 +40,7 @@ namespace Librerias
                 foreach (Alumno i in _alumnos)
                 {
                     Asistencia asistencia = new Asistencia(GetPreceptorActivo(), fecha, i, true);
-                    AgregarAsistencia(_asistencias, asistencia);
+                    AgregarAsistencia(_asistencias);
                 }
                 
             }
