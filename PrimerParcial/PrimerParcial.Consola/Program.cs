@@ -55,14 +55,18 @@ namespace PrimerParcial.Consola
             string fecha = Val.PedirFecha();
             // Listar los alumnos
             List<Alumno> lista = Presentismo.GetListaAlumnos();
-            foreach(Alumno i in lista)
-            {
-                i.ToString();
-            }
-            // para cada alumno solo preguntar si está presente
             foreach (Alumno i in lista)
             {
-                i.ToString();
+                Console.WriteLine(i.ToString());
+            }
+            // para cada alumno solo preguntar si está presente
+            List<Asistencia> listaHoy = new List<Asistencia>();
+            foreach (Alumno i in lista)
+            {
+                Console.WriteLine(i.ToString());
+                // Preguntar si asistió
+                // Si asiste, agregar a listaHoy
+                
             }
             // agrego la lista de asistencia
             // Error: mostrar el error y que luego muestre el menú nuevamente
@@ -72,6 +76,11 @@ namespace PrimerParcial.Consola
             // ingreso fecha
             string fecha = Val.PedirFecha();
             // muestro el toString de cada asistencia
+            List<Asistencia> lista = Presentismo.GetAsistenciasPorFecha(fecha);
+            foreach (Asistencia i in lista)
+            {
+                Console.WriteLine(i.ToString());
+            }
         }
 
 

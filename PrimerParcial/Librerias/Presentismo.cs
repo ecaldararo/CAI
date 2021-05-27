@@ -35,21 +35,15 @@ namespace Librerias
         {
             List<Asistencia> lista = this.GetAsistenciasPorFecha(fecha);
 
-            if(!this._asistencias.Exists(x => x.FechaAsistencia == fecha))
+            if (!this._asistencias.Exists(x => x.FechaAsistencia == fecha))
             {
-                foreach (Alumno i in _alumnos)
-                {
-                    Asistencia asistencia = new Asistencia(GetPreceptorActivo(), fecha, i, true);
-                    AgregarAsistencia(_asistencias);
-                }
-                
+                return true;
             }
             else
             {
-                throw new AsistenciaExistenteEseDiaException();
+                throw new AsistenciaInconsistenteException();
             }
 
-            return true;
         }
         
         private int GetCantidadAlumnosRegulares()
@@ -71,12 +65,23 @@ namespace Librerias
         {
             return _alumnos;
         }
-        public void AgregarAsistencia(List<Asistencia> lista)
+        public void AgregarAsistencia(List<Asistencia> listaHoy)
         {
-            AddRange(lista);
+            string fecha = listaHoy.FirstOrDefault().FechaAsistencia;
+
+            if (!this._asistencias.Exists(x => x.FechaAsistencia == fecha ))
+            {
+                if(AsistenciaRegistrada(fecha) == true)
+                    _asistencias.AddRange(listaHoy);
+            }
+            else
+            {
+                throw new AsistenciaExistenteEseDiaException();
+            }
+            
         }
         
-        public List<Asistencia> GetAsistenciasPorFecha(string fecha)
+        public static List<Asistencia> GetAsistenciasPorFecha(string fecha)
         {
             return _asistencias.FindAll(x => x.FechaAsistencia == fecha);
         }

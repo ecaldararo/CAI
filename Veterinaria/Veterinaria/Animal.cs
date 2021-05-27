@@ -27,7 +27,7 @@ namespace Veterinaria
             try
             {
                 this.Vacunas++;
-                return "Se le dio una vacuna adicional a " + this;
+                return "Se le dio una vacuna adicional a " + this._nombre;
             }
             catch (Exception)
             {

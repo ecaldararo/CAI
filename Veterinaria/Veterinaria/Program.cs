@@ -21,7 +21,8 @@ namespace Veterinaria
             Animal Rosa = new Animal("Rosa", 1);
             Rosa.AsignarPeso = 16;
             Rosa.Vacunas = 0;
-            Rosa.DarVacuna();
+            Console.WriteLine(Rosa.DarVacuna());
+            Console.ReadKey();
 
 
 
