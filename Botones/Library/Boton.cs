@@ -8,15 +8,18 @@ namespace LibreriaBotones
 {
     public class Boton
     {
-        private int id;
+        static private int id = 0;
+        private int idBoton;
         private string description;
 
-        public int Id { get { return id;  } set { id = value; } }
         public string Description { get { return description; } set { description = value; } }
 
-        public Boton(int id, string desc)
+        public int IdBoton { get => idBoton; set => idBoton = value; }
+
+        public Boton(string desc)
         {
-            Id = id;
+            id += 1;
+            IdBoton = id;
             Description = desc;
         }
         //Exception e

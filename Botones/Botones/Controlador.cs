@@ -13,41 +13,43 @@ namespace ProyectoBotones
         {
             foreach (Boton item in lista)
             {
-                Console.WriteLine("Código: " + item.Id + "\t Descripción: " + item.Description);
+                Console.WriteLine("Código: " + item.IdBoton + "\t Descripción: " + item.Description);
             }
         }
         public static void Agregar(List<Boton> lista)
         {
             Console.WriteLine("Ingrese una descripción.");
-            string descripcion = Program.Validadores.PedirString();
+            string descripcion = Validadores.PedirString();
 
-            Console.WriteLine("Ingrese un código.");
-            int codigo = Program.Validadores.PedirInt();
-            while (Controlador.Agregar(lista, codigo, descripcion) == false)
+            /*Console.WriteLine("Ingrese un código.");
+            int codigo = Validadores.PedirInt();
+            while (Controlador.Agregar(lista, descripcion) == false)
             {
                 Console.WriteLine("Código inválido, ingrese otro código.");
-                codigo = Program.Validadores.PedirInt();
-            }
+                codigo = Validadores.PedirInt();
+            }*/
+
+            Controlador.Agregar(lista, descripcion);
         }
         public static void Eliminar(List<Boton> lista)
         {
             int codigo;
             do
             {
-                codigo = Program.Validadores.PedirInt();
-            } while (!lista.Exists(item => item.Id == codigo));
-            lista.RemoveAll(item => item.Id == codigo);
+                codigo = Validadores.PedirInt();
+            } while (!lista.Exists(item => item.IdBoton == codigo));
+            lista.RemoveAll(item => item.IdBoton == codigo);
         }
         public static void MostrarDescripcion(List<Boton> lista)
         {
-            int codigo = Program.Validadores.PedirInt();
-            while (!lista.Exists(item => item.Id == codigo))
+            int codigo = Validadores.PedirInt();
+            while (!lista.Exists(item => item.IdBoton == codigo))
             {
                 Console.WriteLine("\n**Botón inexistente** \nIngrese otro código:");
-                codigo = Program.Validadores.PedirInt();
+                codigo = Validadores.PedirInt();
             }
-            Console.WriteLine("La descripción es: " + lista.Find(item => item.Id == codigo).Description);
+            Console.WriteLine("La descripción es: " + lista.Find(item => item.IdBoton == codigo).Description);
         }
     }
 }
-}
+

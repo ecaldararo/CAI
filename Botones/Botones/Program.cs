@@ -59,8 +59,8 @@ namespace ProyectoBotones
                         Console.WriteLine(iex.Message);
                     }
                 } while (menu == false);
-                
-                
+
+
 
                 switch (entrada)
                 {
@@ -85,10 +85,11 @@ namespace ProyectoBotones
                         Console.WriteLine("***Gracias por utilizar nuestros servicios.*** \nAprete cualquier tecla para salir.");
                         break;
                 }
-                    
+
 
             }
         }
+    }
         
     public class Validadores
     {

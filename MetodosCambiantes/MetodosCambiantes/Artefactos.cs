@@ -20,8 +20,7 @@ namespace MetodosCambiantes
         {
             _id = id;
             _idartefacto ++;
-            estado = 
-                ;
+            estado = false;
         }
 
         public void AccionarLlave()

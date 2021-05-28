@@ -1,6 +1,5 @@
 H:\Escritorio\GitHub\CAI\Botones\Library\bin\Debug\Library.dll
 H:\Escritorio\GitHub\CAI\Botones\Library\bin\Debug\Library.pdb
-H:\Escritorio\GitHub\CAI\Botones\Library\obj\Debug\LibreriaBotones.csprojAssemblyReference.cache
 H:\Escritorio\GitHub\CAI\Botones\Library\obj\Debug\LibreriaBotones.csproj.CoreCompileInputs.cache
 H:\Escritorio\GitHub\CAI\Botones\Library\obj\Debug\Library.dll
 H:\Escritorio\GitHub\CAI\Botones\Library\obj\Debug\Library.pdb
