@@ -10,8 +10,8 @@ namespace LibreriaExpendedora
     {
         public List<Lata> _latas;
         private string _proveedor;
-        private int _capacidad = 100;
-        private double _dinero;
+        private int _capacidad = 100; // funciona si no es static?
+        private double _dinero; // funciona si no es static?
         private bool _encendida;
 
         public int Capacidad { get => _capacidad; set => _capacidad = value; }

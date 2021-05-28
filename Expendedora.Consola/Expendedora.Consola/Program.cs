@@ -104,10 +104,28 @@ namespace ProyectoExpendedora
         private static void ExtraerLata(Expendedora expendedora)
         {
             MostrarStock(expendedora);
-            Console.WriteLine("Ingrese el código de la lata, y el dinero.");
-            Lata lata = expendedora.ExtraerLata(Validadores.PedirCodigo(), Validadores.PedirDinero());
-            lata.Cantidad += -1;
-            Console.WriteLine("Lata extraída exitosamente.");
+            Lata lata;
+            int flag = 0;
+            while (flag == 0)
+            {
+                Console.WriteLine("Ingrese el código de la lata, y el dinero.");
+                try
+                {
+                    lata = expendedora.ExtraerLata(Validadores.PedirCodigo(), Validadores.PedirDinero());
+                    lata.Cantidad += -1;
+                    Console.WriteLine("Lata extraída exitosamente.");
+                    flag = 1;
+                }
+                catch (DineroInsuficienteException de)
+                {
+                    Console.WriteLine("Error." + de.Message);
+                }
+                catch (CodigoInvalidoException ce)
+                {
+                    Console.WriteLine("Error." + ce.Message);
+                }
+            }
+            
             MostrarStock(expendedora);
 
         }
