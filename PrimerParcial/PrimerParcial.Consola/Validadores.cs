@@ -114,9 +114,9 @@ namespace PrimerParcial.Consola
 
             return opcion;
         }
-        public static int PedirIntDesde(int desde)
+        public static int PedirIntDesde(string nombre, int desde)
         {
-            Console.WriteLine("Ingrese un número..");
+            Console.WriteLine("Ingrese un "+ nombre);
             int numero;
             do
             {
@@ -126,31 +126,13 @@ namespace PrimerParcial.Consola
                 }
                 else if (numero < desde)
                 {
-                    Console.WriteLine("Opción inválida. Debe ingresar un número desde " + desde + ". Ingrese un número positivo.");
+                    Console.WriteLine("Opción inválida. Debe ingresar un número mayor a " + desde);
                 }
             } while (numero < desde);
 
             return numero;
         }
-        public static int PedirCodigoDesde(int desde)
-        {
-            Console.WriteLine("Ingrese un número de código...");
-            int numero;
-            do
-            {
-                if (!Int32.TryParse(Console.ReadLine(), out numero))
-                {
-                    Console.WriteLine("Ingreso inválido. Ingrese un número.");
-                    numero = -1;
-                }
-                else if (numero < desde)
-                {
-                    Console.WriteLine("Ingreso inválido. Debe ingresar un número desde " + desde + ". Ingrese un número positivo.");
-                }
-            } while (numero < desde);
 
-            return numero;
-        }
         public static string PedirStringNoVac()
         {
             // Console.WriteLine("Ingrese una palabra.");
@@ -175,6 +157,31 @@ namespace PrimerParcial.Consola
 
             return fecha;
 
+        }
+
+        public static bool PedirOpcionSINO()
+        {
+            Console.WriteLine("Ingrese un el número de opción \n 1- SI \n 2- NO");
+            int opcion;
+            do
+            {
+                if (!Int32.TryParse(Console.ReadLine(), out opcion))
+                {
+                    Console.WriteLine("Ingreso inválido. Ingrese el número de opción");
+                }
+                else if (opcion < 0 || opcion > 3)
+                {
+                    Console.WriteLine("Opción inválida. Debe ingresar 1 para SI, o 2 para No. Ingrese el número de opción");
+                }
+            } while (opcion < 0 || opcion > 3);
+
+            bool salida;
+            if (opcion == 1)
+                salida = true;
+            else
+                salida = false;
+
+            return salida;
         }
 
         public static string GetStringInput(string message)

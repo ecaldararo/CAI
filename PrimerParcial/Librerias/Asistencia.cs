@@ -20,6 +20,7 @@ namespace Librerias
             _fechaAsistencia = fechaAsistencia;
             _alumno = alumno;
             _estaPresente = estaPresente;
+            _fechaHoraReal = DateTime.Now;
 
         }
 
@@ -27,8 +28,15 @@ namespace Librerias
 
         public override string ToString()
         {
-            return $"FECHAREFERENCIA  está presente  por registrado el ";
-            //return $"FECHAREFERENCIA {_alumno.ToString()} está presente {_alumno.} por {PRECEPTOR FORMATEADO} registrado el {FECHAHORAREAL}";
+            if (this._estaPresente == true)
+            {
+                return $"{_fechaAsistencia.ToString()} {_alumno.ToString()} está presente SI por {_preceptor.ToString()} registrado el {_fechaHoraReal.ToString()}";
+            }
+            else
+            {
+                return $"{_fechaAsistencia.ToString()} {_alumno.ToString()} está presente NO por {_preceptor.ToString()} registrado el {_fechaHoraReal.ToString()}";
+            }
+            
 
         }
     }

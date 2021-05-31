@@ -33,15 +33,13 @@ namespace Librerias
 
         private bool AsistenciaRegistrada(string fecha)
         {
-            List<Asistencia> lista = this.GetAsistenciasPorFecha(fecha);
-
-            if (!this._asistencias.Exists(x => x.FechaAsistencia == fecha))
+            if (this._asistencias.Exists(x => x.FechaAsistencia == fecha))
             {
-                return true;
+                throw new AsistenciaExistenteEseDiaException(); 
             }
             else
             {
-                throw new AsistenciaInconsistenteException();
+                return false;
             }
 
         }
@@ -49,9 +47,10 @@ namespace Librerias
         private int GetCantidadAlumnosRegulares()
         {
             int cant = 0;
-            foreach (AlumnoRegular i in _alumnos)
+            foreach (Alumno i in _alumnos)
             {
-                cant++;
+                if (i is AlumnoRegular)
+                    cant++;
             }
             return cant;
         }
@@ -69,19 +68,21 @@ namespace Librerias
         {
             string fecha = listaHoy.FirstOrDefault().FechaAsistencia;
 
-            if (!this._asistencias.Exists(x => x.FechaAsistencia == fecha ))
+            int cant = GetCantidadAlumnosRegulares();
+
+            if (cant == listaHoy.Count())
             {
-                if(AsistenciaRegistrada(fecha) == true)
+                if (AsistenciaRegistrada(fecha) == false)
                     _asistencias.AddRange(listaHoy);
             }
             else
             {
-                throw new AsistenciaExistenteEseDiaException();
+                throw new AsistenciaInconsistenteException();
             }
             
         }
         
-        public static List<Asistencia> GetAsistenciasPorFecha(string fecha)
+        public List<Asistencia> GetAsistenciasPorFecha(string fecha)
         {
             return _asistencias.FindAll(x => x.FechaAsistencia == fecha);
         }

@@ -1,6 +1,5 @@
-H:\Escritorio\GitHub\CAI\PrimerParcial\Librerias\obj\Debug\Librerias.csprojAssemblyReference.cache
-H:\Escritorio\GitHub\CAI\PrimerParcial\Librerias\obj\Debug\Librerias.csproj.CoreCompileInputs.cache
 H:\Escritorio\GitHub\CAI\PrimerParcial\Librerias\bin\Debug\Librerias.dll
 H:\Escritorio\GitHub\CAI\PrimerParcial\Librerias\bin\Debug\Librerias.pdb
+H:\Escritorio\GitHub\CAI\PrimerParcial\Librerias\obj\Debug\Librerias.csproj.CoreCompileInputs.cache
 H:\Escritorio\GitHub\CAI\PrimerParcial\Librerias\obj\Debug\Librerias.dll
 H:\Escritorio\GitHub\CAI\PrimerParcial\Librerias\obj\Debug\Librerias.pdb

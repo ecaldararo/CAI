@@ -1,10 +1,10 @@
-H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\obj\Debug\Parcial1.[CALDARARO].Presentismo.csproj.CoreCompileInputs.cache
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\bin\Debug\PrimerParcial.Consola.exe.config
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\bin\Debug\PrimerParcial.Consola.exe
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\bin\Debug\PrimerParcial.Consola.pdb
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\bin\Debug\Librerias.dll
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\bin\Debug\Librerias.pdb
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\obj\Debug\Parcial1.[CALDARARO].Presentismo.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\obj\Debug\Parcial1.[CALDARARO].Presentismo.csproj.CoreCompileInputs.cache
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\obj\Debug\Parcial1.[CALDARARO].Presentismo.csproj.CopyComplete
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\obj\Debug\PrimerParcial.Consola.exe
 H:\Escritorio\GitHub\CAI\PrimerParcial\PrimerParcial.Consola\obj\Debug\PrimerParcial.Consola.pdb

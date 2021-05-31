@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Librerias;
+using Exceptions;
 
 namespace PrimerParcial.Consola
 {
@@ -55,28 +56,58 @@ namespace PrimerParcial.Consola
             string fecha = Val.PedirFecha();
             // Listar los alumnos
             List<Alumno> lista = Presentismo.GetListaAlumnos();
+
+            Console.WriteLine("---Lista de alumnos---");
             foreach (Alumno i in lista)
             {
                 Console.WriteLine(i.ToString());
             }
+            Console.WriteLine("---Fin lista de alumnos---");
+
             // para cada alumno solo preguntar si está presente
             List<Asistencia> listaHoy = new List<Asistencia>();
             foreach (Alumno i in lista)
             {
-                Console.WriteLine(i.ToString());
+                Console.WriteLine("Tomar asistencia del alumno " + i.ToString());
+
                 // Preguntar si asistió
                 // Si asiste, agregar a listaHoy
-                
+
+                if (i is AlumnoOyente)
+                {
+                    Console.WriteLine("El alumno " + i.ToString() + " es oyente");
+                }
+                else
+                {
+                    bool rta = Val.PedirOpcionSINO();
+                    Asistencia asist = new Asistencia(p, fecha, i, rta);
+                    listaHoy.Add(asist);
+                }
             }
             // agrego la lista de asistencia
+            try
+            {
+                _presentismo.AgregarAsistencia(listaHoy);
+                Console.WriteLine("Asistencias del día :" + fecha + " agregadas exitosamente");
+            }
+            catch (AsistenciaExistenteEseDiaException ae)
+            {
+                Console.WriteLine(ae.Message);
+            }
+            catch (AsistenciaInconsistenteException aie)
+            {
+                Console.WriteLine(aie.Message);
+            }
             // Error: mostrar el error y que luego muestre el menú nuevamente
         }
         static void MostrarAsistencia()
         {
             // ingreso fecha
             string fecha = Val.PedirFecha();
+
             // muestro el toString de cada asistencia
-            List<Asistencia> lista = Presentismo.GetAsistenciasPorFecha(fecha);
+            List<Asistencia> lista = _presentismo.GetAsistenciasPorFecha(fecha);
+            Console.WriteLine("Asistencias del día " + fecha);
             foreach (Asistencia i in lista)
             {
                 Console.WriteLine(i.ToString());
