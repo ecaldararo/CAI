@@ -80,9 +80,9 @@ namespace Validadores
 
             return opcion;
         }
-        public static int PedirIntDesde(int desde)
+        public static int PedirIntDesde(string nombre, int desde)
         {
-            Console.WriteLine("Ingrese un número..");
+            Console.WriteLine("Ingrese un " + nombre);
             int numero;
             do
             {
@@ -92,30 +92,12 @@ namespace Validadores
                 }
                 else if (numero < desde)
                 {
-                    Console.WriteLine("Opción inválida. Debe ingresar un número desde " + desde + ". Ingrese un número positivo.");
+                    Console.WriteLine("Opción inválida. Debe ingresar un número mayor a " + desde);
                 }
             } while (numero < desde);
 
             return numero;
         }
-        public static int PedirCodigoDesde(int desde)
-        {
-            Console.WriteLine("Ingrese un número de código...");
-            int numero;
-            do
-            {
-                if (!Int32.TryParse(Console.ReadLine(), out numero))
-                {
-                    Console.WriteLine("Ingreso inválido. Ingrese un número.");
-                    numero = -1;
-                }
-                else if (numero < desde)
-                {
-                    Console.WriteLine("Ingreso inválido. Debe ingresar un número desde " + desde + ". Ingrese un número positivo.");
-                }
-            } while (numero < desde);
-
-            return numero;
-        }
+        
     }
 }

@@ -25,7 +25,7 @@ namespace Ventas
         }
         public void AgregarRepuesto(Repuesto repuesto)
         {
-            this._listaProductos.Add(repuesto);
+            this.ListaProductos.Add(repuesto);
         }
         public void QuitarRepuesto(int codigo)
         {
