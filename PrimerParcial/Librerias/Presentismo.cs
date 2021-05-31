@@ -84,7 +84,14 @@ namespace Librerias
         
         public List<Asistencia> GetAsistenciasPorFecha(string fecha)
         {
-            return _asistencias.FindAll(x => x.FechaAsistencia == fecha);
+            
+            if (_asistencias.Exists(x => x.FechaAsistencia == fecha))
+            {
+                return _asistencias.FindAll(x => x.FechaAsistencia == fecha);
+            } else
+            {
+                throw new SinAlumnosRegistradosException();
+            }
         }
     }
 }

@@ -106,12 +106,20 @@ namespace PrimerParcial.Consola
             string fecha = Val.PedirFecha();
 
             // muestro el toString de cada asistencia
-            List<Asistencia> lista = _presentismo.GetAsistenciasPorFecha(fecha);
-            Console.WriteLine("Asistencias del día " + fecha);
-            foreach (Asistencia i in lista)
+            try
             {
-                Console.WriteLine(i.ToString());
+                List<Asistencia> lista = _presentismo.GetAsistenciasPorFecha(fecha);
+                Console.WriteLine("Asistencias del día " + fecha);
+                foreach (Asistencia i in lista)
+                {
+                    Console.WriteLine(i.ToString());
+                }
             }
+            catch (SinAlumnosRegistradosException sex)
+            {
+                Console.WriteLine(sex.Message);
+            }
+            
         }
 
 
