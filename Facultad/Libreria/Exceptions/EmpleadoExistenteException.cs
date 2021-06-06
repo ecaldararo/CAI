@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Libreria
 {
-    public class Class1
+    public class EmpleadoExistenteException : Exception
     {
+        public EmpleadoExistenteException() : base("El empleado ya existe")
+        {
+        }
     }
 }

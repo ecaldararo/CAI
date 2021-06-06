@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Libreria.Alumno">
+    <Position X="1.25" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAQAAAEAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Alumno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Bedel">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Bedel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Directivo">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Directivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Docente">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Docente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Empleado">
+    <Position X="6.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EACAAAACAAQAAAIEgAAABAAAAEABAIAAAAAAAABgEAA=</HashCode>
+      <FileName>Empleado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.AlumnoExistenteException" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\AlumnoExistenteException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Facultad">
+    <Position X="2" Y="4.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAEQAAAAAAAAYQAgAAAQQAAAAAAAAAARAIAAQA=</HashCode>
+      <FileName>Facultad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Perkins">
+    <Position X="12" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAABIAAAAAAAAAAABAAAgAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Perkins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Persona">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAQEAAAAgAAAAEABAgAAAAAAAAIAAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.Salario">
+    <Position X="9.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAhAAAAAAAAAAEIAAAAAABAAAAEACAQAAABAAAAAAA=</HashCode>
+      <FileName>Salario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.EmpleadoExistenteException" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\EmpleadoExistenteException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Libreria.TipoEmpleadoIncorrectoException" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\TipoEmpleadoIncorrectoException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

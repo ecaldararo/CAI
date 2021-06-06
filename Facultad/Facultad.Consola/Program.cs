@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Libreria;
+
 
 namespace Facultad.Consola
 {
@@ -43,6 +45,112 @@ namespace Facultad.Consola
             //.Modulariazar
             //
             //.NO puede haber console.write o console.read en ninguna clase del paquete de libreria de clases.
+
+            Libreria.Facultad UBA = new Libreria.Facultad(15, "Universidad de Buenos Aires");
+
+            UBA.AgregarAlumno(1, "Rosa", "Perez", new DateTime(2000, 5, 1, 8, 30, 52));
+            UBA.AgregarAlumno(2, "Pepe", "Gonzalez", new DateTime(2001, 5, 1, 8, 30, 52));
+            UBA.AgregarAlumno(3, "Franco", "Garibaldi", new DateTime(2002, 5, 1, 8, 30, 52));
+            UBA.AgregarAlumno(4, "Lorenzo", "Lamas", new DateTime(2003, 5, 1, 8, 30, 52));
+
+            UBA.AgregarEmpleado("Pepe",1,"José","Deluca", new DateTime(1960, 5, 1, 8, 30, 52), new DateTime(2003, 5, 1, 8, 30, 52),1);
+            UBA.AgregarEmpleado("", 2, "Juan", "García", new DateTime(1961, 5, 1, 8, 30, 52), new DateTime(2003, 5, 1, 8, 30, 52), 2);
+            UBA.AgregarEmpleado("", 3, "Juan José", "Garzón", new DateTime(1962, 5, 1, 8, 30, 52), new DateTime(2003, 5, 1, 8, 30, 52), 2);
+            UBA.AgregarEmpleado("", 4, "John", "Abdala", new DateTime(1955, 5, 1, 8, 30, 52), new DateTime(2003, 5, 1, 8, 30, 52), 3);
+
+            Menu(UBA);
+            Console.ReadKey();
+
+        }
+
+        static void Menu(Libreria.Facultad fac)
+        {
+            int opcion;
+            do
+            {
+                Console.WriteLine(fac.Nombre + "\n-----------MENU-----------" +
+                "\n 1-Listar Alumnos" +
+                "\n 2-Listar Empleados" +
+                "\n 3-Agregar Alumno" +
+                "\n 4-Agregar Bedel" +
+                "\n 5-Agregar Docente" +
+                "\n 6-Agregar Directivo" +
+                "\n 7-Agregar Salario" +
+                "\n 8-Salir" +
+                "\n ------------------------");
+                opcion = Perkins.PedirOpcion(1, 8);
+                switch(opcion)
+                {
+                    case 1:
+                        Console.WriteLine("Listado de Alumnos:");
+                        List<Alumno> listaA = fac.TraerAlumnos();
+                        foreach (Alumno i in listaA)
+                        {
+                            Console.WriteLine(i.ToString());
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine("Listado de Empleados:");
+                        List<Empleado> listaE = fac.TraerEmpleados();
+                        foreach (Empleado i in listaE)
+                        {
+                            Console.WriteLine(i.ToString());
+                        }
+                        break;
+                    case 3:
+                        Console.WriteLine("Agregar Alumno");
+                        try
+                        {
+                            fac.AgregarAlumno(Perkins.PedirIntDesde(0), Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(2000, 5, 1, 8, 30, 52));
+                        }
+                        catch (AlumnoExistenteException aex)
+                        {
+                            Console.WriteLine(aex.Message);
+                        }
+                        break;
+                    case 4:
+                        Console.WriteLine("Agregar Bedel");
+                        try
+                        {
+                            List<Empleado> listaEmp = fac.TraerEmpleados();
+                            fac.AgregarEmpleado(Perkins.PedirStringNoVac(" un apodo"),Perkins.PedirIntDesde(listaEmp.Last().Legajo+1),Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52),(int)TipoEmpleado.Bedel);
+                        }
+                        catch (EmpleadoExistenteException eex)
+                        {
+                            Console.WriteLine(eex.Message);
+                        }
+                        break;
+                    case 5:
+                        Console.WriteLine("Agregar Docente");
+                        try
+                        {
+                            List<Empleado> listaEmp = fac.TraerEmpleados();
+                            fac.AgregarEmpleado("", Perkins.PedirIntDesde(listaEmp.Last().Legajo + 1), Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52), (int)TipoEmpleado.Docente);
+                        }
+                        catch (EmpleadoExistenteException eex)
+                        {
+                            Console.WriteLine(eex.Message);
+                        }
+                        break;
+                    case 6:
+                        Console.WriteLine("Agregar Directivo");
+                        try
+                        {
+                            List<Empleado> listaEmp = fac.TraerEmpleados();
+                            fac.AgregarEmpleado("", Perkins.PedirIntDesde(listaEmp.Last().Legajo + 1), Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52), (int)TipoEmpleado.Directivo);
+                        }
+                        catch (EmpleadoExistenteException eex)
+                        {
+                            Console.WriteLine(eex.Message);
+                        }
+                        break;
+                    case 7:
+                        Console.WriteLine("Agregar Salario");
+
+                        break;
+                }
+            } while (opcion != 8);
+            
         }
     }
 }
