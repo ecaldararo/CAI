@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoExpendedora", "Expe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaExpendedora", "LibreriaExpendedora\LibreriaExpendedora.csproj", "{E0FA42AA-0B98-400E-AF56-33E40969D5EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpendedoraForm", "ExpendedoraForm\ExpendedoraForm.csproj", "{AEDFF245-1B1B-4C53-B032-8922ED89CD62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E0FA42AA-0B98-400E-AF56-33E40969D5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0FA42AA-0B98-400E-AF56-33E40969D5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0FA42AA-0B98-400E-AF56-33E40969D5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEDFF245-1B1B-4C53-B032-8922ED89CD62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEDFF245-1B1B-4C53-B032-8922ED89CD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEDFF245-1B1B-4C53-B032-8922ED89CD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEDFF245-1B1B-4C53-B032-8922ED89CD62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

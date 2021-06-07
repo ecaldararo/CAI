@@ -35,10 +35,10 @@ namespace LibreriaExpendedora
             return _precio / _volumen ;
         }
 
-        /*public override string ToString()
+        public override string ToString()
         {
-            return value.ToString();
-        }*/
+            return $"{Codigo}).{Nombre}, {Precio}";
+        }
 
     }
 }
