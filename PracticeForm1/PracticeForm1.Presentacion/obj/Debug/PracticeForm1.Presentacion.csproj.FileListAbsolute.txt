@@ -1,0 +1,16 @@
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\bin\Debug\PracticeForm1.Presentacion.exe.config
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\bin\Debug\PracticeForm1.Presentacion.exe
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\bin\Debug\PracticeForm1.Presentacion.pdb
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\bin\Debug\Entidades.dll
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\bin\Debug\Negocio.dll
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\bin\Debug\Entidades.pdb
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\bin\Debug\Negocio.pdb
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.Form1.resources
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.Properties.Resources.resources
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.csproj.GenerateResource.cache
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.csproj.CopyComplete
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.exe
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.pdb
+H:\Escritorio\GitHub\CAI\PracticeForm1\PracticeForm1.Presentacion\obj\Debug\PracticeForm1.Presentacion.Form2.resources

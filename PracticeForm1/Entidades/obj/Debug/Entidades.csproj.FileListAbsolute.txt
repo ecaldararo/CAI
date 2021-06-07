@@ -1,0 +1,6 @@
+H:\Escritorio\GitHub\CAI\PracticeForm1\Entidades\bin\Debug\Entidades.dll
+H:\Escritorio\GitHub\CAI\PracticeForm1\Entidades\bin\Debug\Entidades.pdb
+H:\Escritorio\GitHub\CAI\PracticeForm1\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\PracticeForm1\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\PracticeForm1\Entidades\obj\Debug\Entidades.dll
+H:\Escritorio\GitHub\CAI\PracticeForm1\Entidades\obj\Debug\Entidades.pdb
