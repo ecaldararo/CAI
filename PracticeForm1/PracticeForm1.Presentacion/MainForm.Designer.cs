@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace PracticeForm1.Presentacion
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@ namespace PracticeForm1.Presentacion
             this.chkBoxActivo = new System.Windows.Forms.CheckBox();
             this.cmbEC = new System.Windows.Forms.ComboBox();
             this.lvlEC = new System.Windows.Forms.Label();
+            this.btnModify = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -93,8 +94,9 @@ namespace PracticeForm1.Presentacion
             this.lstClientes.ItemHeight = 16;
             this.lstClientes.Location = new System.Drawing.Point(239, 37);
             this.lstClientes.Name = "lstClientes";
-            this.lstClientes.Size = new System.Drawing.Size(352, 148);
+            this.lstClientes.Size = new System.Drawing.Size(491, 148);
             this.lstClientes.TabIndex = 5;
+            this.lstClientes.SelectedIndexChanged += new System.EventHandler(this.lstClientes_SelectedIndexChanged);
             // 
             // btnClean
             // 
@@ -118,11 +120,11 @@ namespace PracticeForm1.Presentacion
             // 
             // btnFrm2
             // 
-            this.btnFrm2.Location = new System.Drawing.Point(491, 242);
+            this.btnFrm2.Location = new System.Drawing.Point(589, 208);
             this.btnFrm2.Name = "btnFrm2";
-            this.btnFrm2.Size = new System.Drawing.Size(100, 42);
+            this.btnFrm2.Size = new System.Drawing.Size(141, 30);
             this.btnFrm2.TabIndex = 8;
-            this.btnFrm2.Text = "Otro Formulario";
+            this.btnFrm2.Text = "Listar";
             this.btnFrm2.UseVisualStyleBackColor = true;
             this.btnFrm2.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -138,6 +140,7 @@ namespace PracticeForm1.Presentacion
             // 
             // cmbEC
             // 
+            this.cmbEC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEC.FormattingEnabled = true;
             this.cmbEC.Location = new System.Drawing.Point(36, 161);
             this.cmbEC.Name = "cmbEC";
@@ -154,12 +157,23 @@ namespace PracticeForm1.Presentacion
             this.lvlEC.TabIndex = 11;
             this.lvlEC.Text = "Estado Civil";
             // 
-            // Form1
+            // btnModify
+            // 
+            this.btnModify.Location = new System.Drawing.Point(589, 254);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(141, 30);
+            this.btnModify.TabIndex = 12;
+            this.btnModify.Text = "Modificar";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            // 
+            // MainForm
             // 
             this.AcceptButton = this.btnAdd;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 308);
+            this.ClientSize = new System.Drawing.Size(757, 308);
+            this.Controls.Add(this.btnModify);
             this.Controls.Add(this.lvlEC);
             this.Controls.Add(this.cmbEC);
             this.Controls.Add(this.chkBoxActivo);
@@ -172,7 +186,7 @@ namespace PracticeForm1.Presentacion
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnAdd);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "txtNombre";
             this.Text = "Clientes";
@@ -195,7 +209,7 @@ namespace PracticeForm1.Presentacion
         private System.Windows.Forms.CheckBox chkBoxActivo;
         private System.Windows.Forms.ComboBox cmbEC;
         private System.Windows.Forms.Label lvlEC;
-
+        private Button btnModify;
     }
 }
 

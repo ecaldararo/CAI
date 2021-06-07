@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1007C486-0406-4955-92F3-D87D4CFB46BB}</ProjectGuid>
+    <ProjectGuid>{9B1EC861-C27D-49F5-A226-977C5D4CC18D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PracticeForm1.Presentacion</RootNamespace>
-    <AssemblyName>PracticeForm1.Presentacion</AssemblyName>
+    <RootNamespace>ModifyForm</RootNamespace>
+    <AssemblyName>ModifyForm</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,35 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListForm.Designer.cs">
-      <DependentUpon>ListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModifyForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModifyForm.Designer.cs">
-      <DependentUpon>ModifyForm.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListForm.resx">
-      <DependentUpon>ListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModifyForm.resx">
-      <DependentUpon>ModifyForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -84,7 +63,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,16 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{35be18d2-f05a-47f7-9b64-9d26fec84d4c}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{9a75cdab-207c-4910-b282-1a9f48e7e6cd}</Project>
-      <Name>Negocio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

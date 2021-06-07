@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PracticeForm1.Presentacion
+namespace ModifyForm
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace PracticeForm1.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new Form1());
         }
     }
 }

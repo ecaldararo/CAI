@@ -12,16 +12,18 @@ using Negocio;
 
 namespace PracticeForm1.Presentacion
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         //private List<Empresa> empresas;
 
-        private Form2 frm2;
+        private ListForm frm2;
 
         private List<Cliente> listaClientes;
 
         private Empresa panaderia;
-        public Form1()
+
+        private Cliente sel;
+        public MainForm()
         {
             InitializeComponent();
             
@@ -107,14 +109,28 @@ namespace PracticeForm1.Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frm2 = new Form2();
-            frm2.Owner = this;
+            frm2 = new ListForm(this,listaClientes);
+            //frm2.Owner = this;
+            lstClientes.DataSource = null;
             frm2.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void lstClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            sel = (Cliente)lstClientes.SelectedValue;
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            ModifyForm mod = new ModifyForm(sel, this, listaClientes);
+            this.Hide();
+            lstClientes.DataSource = null;
+            mod.Show();
         }
     }
 }
