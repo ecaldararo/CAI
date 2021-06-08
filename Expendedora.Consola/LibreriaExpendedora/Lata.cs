@@ -24,20 +24,24 @@ namespace LibreriaExpendedora
 
         public Lata(string codigo, string nombre, int cantidad)
         {
-            Codigo = codigo;
-            Nombre = nombre;
-            Cantidad = cantidad;
-            Precio = 50;
+            _codigo = codigo;
+            _nombre = nombre;
+            _cantidad = cantidad;
+            _volumen = 200;
+            _precio = 50;
         }
 
         private double GetPrecioPorLitro()
         {
-            return _precio / _volumen ;
+            if (_volumen != 0)
+                return _precio / _volumen;
+            else
+                return 0;
         }
 
         public override string ToString()
         {
-            return $"{Codigo}).{Nombre}, {Precio}";
+            return $"CO{Codigo}) {Nombre} | Cantidad: {Cantidad} | Precio: {Precio}";
         }
 
     }

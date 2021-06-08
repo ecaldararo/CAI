@@ -54,6 +54,7 @@ namespace ExpendedoraForm
             this.btnAddLata.TabIndex = 1;
             this.btnAddLata.Text = "Agregar Lata";
             this.btnAddLata.UseVisualStyleBackColor = true;
+            this.btnAddLata.Click += new System.EventHandler(this.btnAddLata_Click);
             // 
             // label1
             // 
@@ -65,7 +66,7 @@ namespace ExpendedoraForm
             this.label1.TabIndex = 2;
             this.label1.Text = "Expendedora";
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,7 +74,7 @@ namespace ExpendedoraForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddLata);
             this.Controls.Add(this.btnListarLatas);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

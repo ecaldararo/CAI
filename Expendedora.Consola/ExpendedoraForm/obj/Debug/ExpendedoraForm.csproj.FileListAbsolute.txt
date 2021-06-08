@@ -5,10 +5,12 @@ H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\bin\Debug\LibreriaE
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\bin\Debug\LibreriaExpendedora.pdb
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.csprojAssemblyReference.cache
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.FormMain.resources
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.FormLista.resources
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.Properties.Resources.resources
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.csproj.GenerateResource.cache
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.csproj.CoreCompileInputs.cache
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.csproj.CopyComplete
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.exe
 H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.pdb
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.FormAgregar.resources
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.FormListar.resources
+H:\Escritorio\GitHub\CAI\Expendedora.Consola\ExpendedoraForm\obj\Debug\ExpendedoraForm.FormModificar.resources

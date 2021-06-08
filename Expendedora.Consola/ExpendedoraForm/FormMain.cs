@@ -13,27 +13,36 @@ namespace ExpendedoraForm
 {
     public partial class FormMain : Form
     {
-        private List<Lata> latas;
+        private List<Lata> _latas;
+        private Expendedora exp;
         public FormMain()
         {
             InitializeComponent();
-            Expendedora exp = new Expendedora();
+            exp = new Expendedora();
             exp.EncenderMaquina();
             exp._latas.Add(new Lata("1", "Coca", 20));
             exp._latas.Add(new Lata("2", "Sprite", 20));
             exp._latas.Add(new Lata("3", "Fanta", 20));
             exp._latas.Add(new Lata("4", "Fernet", 20));
             exp._latas.Add(new Lata("5", "Ron", 20));
-            latas = exp._latas;
+            _latas = exp._latas;
         }
 
         private void btnListarLatas_Click(object sender, EventArgs e)
         {
-            FormLista frm = new FormLista(latas);
+            FormListar frm = new FormListar(_latas);
             frm.Owner = this;
             this.Hide();
             frm.Show();
             
+        }
+
+        private void btnAddLata_Click(object sender, EventArgs e)
+        {
+            FormAgregar frm = new FormAgregar(this, _latas, exp);
+            frm.Owner = this;
+            this.Hide();
+            frm.Show();
         }
     }
 }
