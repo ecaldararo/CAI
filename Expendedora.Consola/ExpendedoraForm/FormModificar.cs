@@ -29,10 +29,9 @@ namespace ExpendedoraForm
             {
                 Validar();
 
-                Lata lata = _lata;
-                lata.Codigo = txtCod.Text;
-                lata.Nombre = txtNom.Text;
-                lata.Cantidad = (int)numCan.Value;
+                _lata.Codigo = txtCod.Text;
+                _lata.Nombre = txtNom.Text;
+                _lata.Cantidad = (int)numCan.Value;
                 
                 this.Owner.Show();
                 this.Close();

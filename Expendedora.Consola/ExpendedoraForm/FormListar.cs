@@ -44,9 +44,7 @@ namespace ExpendedoraForm
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Lata eliminar = _latas.FirstOrDefault(x => x.Equals(lata));
-
-            if (eliminar != null)
+            if (_latas.Exists(x => x.Equals(lata)))
                 _latas.RemoveAll(x => x.Equals(lata));
                 
             Recargar();
