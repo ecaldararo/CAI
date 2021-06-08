@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ventas;
+using Negocio;
 using Validadores;
 using Exceptions;
+using Entidades;
 
 namespace ProyectoVentaRepuestos
 {
@@ -75,8 +76,8 @@ namespace ProyectoVentaRepuestos
         static void AgregarRepuesto(Comercio comercio)
         {
             Console.WriteLine("Agregando Nuevo Repuesto...");
-            Repuesto rep = new Repuesto(Val.PedirIntDesde("código", 0), Val.PedirNombre(), Val.PedirPrecio(), new Categoria(PedirCategoria()), Val.PedirCantidad());
-            comercio.AgregarRepuesto(rep);
+            Repuesto rep = new Repuesto(Val.PedirNombre(), Val.PedirPrecio(), new Categoria(PedirCategoria()), Val.PedirCantidad());
+            comercio.AgregarRepuestoALista(rep);
         }
         static void QuitarRepuesto(Comercio comercio)
         {

@@ -41,15 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Repuesto.cs" />
     <Compile Include="Comercio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
-      <Project>{327b3b86-d8d0-4cc5-a8e2-f9a431aaf5ce}</Project>
-      <Name>Exceptions</Name>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{0f8b62f1-61e3-44c4-9b2d-542588e7cebe}</Project>
+      <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

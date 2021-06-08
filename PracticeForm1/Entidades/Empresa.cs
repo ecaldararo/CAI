@@ -26,7 +26,7 @@ namespace Entidades
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Direccion { get => _direccion; set => _direccion = value; }
 
-        public static List<Cliente> GetLista(Empresa e)
+        public List<Cliente> GetLista(Empresa e)
         {
             return e.listClientes;
         }

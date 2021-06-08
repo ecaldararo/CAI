@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Exceptions;
+using Entidades;
 
-namespace Ventas
+namespace Negocio
 {
     public class Comercio
     {
@@ -23,9 +24,10 @@ namespace Ventas
             Direccion = direccion;
             ListaProductos = new List<Repuesto>();
         }
-        public void AgregarRepuesto(Repuesto repuesto)
+
+        public void AgregarRepuestoALista(Repuesto repuesto)
         {
-            this.ListaProductos.Add(repuesto);
+            ListaProductos.Add(repuesto);
         }
         public void QuitarRepuesto(int codigo)
         {
@@ -80,5 +82,6 @@ namespace Ventas
         {
             return ListaProductos.FindAll(x => x.Categoria.Codigo == codcat);
         }
+
     }
 }

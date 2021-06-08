@@ -7,16 +7,16 @@ using Entidades;
 
 namespace Negocio
 {
-    public static class EmpresaController
+    public class EmpresaController
     {
-        public static void AgregarEmpresa()
+        public void AgregarEmpresa()
         {
             //
         }
 
-        public static List<Cliente> GetLista(Empresa e)
+        public List<Cliente> GetLista(Empresa e)
         {
-            List<Cliente> lista = Empresa.GetLista(e);
+            List<Cliente> lista = e.GetLista(e);
             return lista;
         }
     }
