@@ -1,9 +1,9 @@
 H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\VentaRepuestos.exe.config
 H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\VentaRepuestos.exe
 H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\VentaRepuestos.pdb
-H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\Exceptions.dll
+H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\Entidades.dll
 H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\Ventas.dll
-H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\Exceptions.pdb
+H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\Entidades.pdb
 H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\bin\Debug\Ventas.pdb
 H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\obj\Debug\Consola.csprojAssemblyReference.cache
 H:\Escritorio\GitHub\CAI\VentaRepuestos\VentaRepuestos\obj\Debug\Consola.csproj.CoreCompileInputs.cache

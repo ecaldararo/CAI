@@ -14,7 +14,7 @@ namespace FormRepuestos
 {
     public partial class FormMain : Form
     {
-        private Comercio comercio1;
+        private NegocioController comercio1;
         private Categoria auto;
         private Categoria moto;
         private List<Categoria> _categorias;
@@ -22,7 +22,7 @@ namespace FormRepuestos
         {
             InitializeComponent();
 
-            comercio1 = new Comercio("VentaRepuestos", "Ambrosetti 991");
+            comercio1 = new NegocioController("VentaRepuestos", "Ambrosetti 991");
             
             auto = new Categoria("Auto");
             moto = new Categoria("Moto");

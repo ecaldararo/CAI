@@ -24,12 +24,12 @@ namespace ProyectoVentaRepuestos
             //. Agregar stock de un repuesto
             //. Quitar stock de un repuesto
 
-            Comercio comercio1 = new Comercio("VentaRepuestos","Ambrosetti 991");
+            NegocioController comercio1 = new NegocioController("VentaRepuestos","Ambrosetti 991");
             Menu(comercio1);
 
         }
 
-        static void Menu(Comercio comercio)
+        static void Menu(NegocioController comercio)
         {
             bool menu = true;
             do
@@ -73,13 +73,13 @@ namespace ProyectoVentaRepuestos
             } while (menu == true);
             
         }
-        static void AgregarRepuesto(Comercio comercio)
+        static void AgregarRepuesto(NegocioController comercio)
         {
             Console.WriteLine("Agregando Nuevo Repuesto...");
             Repuesto rep = new Repuesto(Val.PedirNombre(), Val.PedirPrecio(), new Categoria(PedirCategoria()), Val.PedirCantidad());
             comercio.AgregarRepuestoALista(rep);
         }
-        static void QuitarRepuesto(Comercio comercio)
+        static void QuitarRepuesto(NegocioController comercio)
         {
             Console.WriteLine("Quitando Repuesto...");
             comercio.QuitarRepuesto(Val.PedirIntDesde("número", 0));
@@ -90,16 +90,16 @@ namespace ProyectoVentaRepuestos
             return Val.PedirNombre();
 
         }
-        static void ListarProductos(Comercio comercio)
+        static void ListarProductos(NegocioController comercio)
         {
             Console.WriteLine("Listando Productos...");
-            foreach (Repuesto i in comercio.ListaProductos)
+            foreach (Repuesto i in comercio.Listar())
             {
                 Console.WriteLine("Cod: " + i.Codigo + " Nombre: " + i.Nombre + " Cantidad: " + i.Stock);
             }
 
         }
-        static void AgregarStock(Comercio comercio)
+        static void AgregarStock(NegocioController comercio)
         {
             Console.WriteLine("Agregar Stock");
             bool flag = false;
@@ -117,7 +117,7 @@ namespace ProyectoVentaRepuestos
             } while (flag == false);
             
         }
-        static void QuitarStock(Comercio comercio)
+        static void QuitarStock(NegocioController comercio)
         {
             Console.WriteLine("Quitar Stock");
             bool flag = false;

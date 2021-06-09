@@ -1,6 +1,5 @@
 H:\Escritorio\GitHub\CAI\VentaRepuestos\Entidades\bin\Debug\Entidades.dll
 H:\Escritorio\GitHub\CAI\VentaRepuestos\Entidades\bin\Debug\Entidades.pdb
-H:\Escritorio\GitHub\CAI\VentaRepuestos\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 H:\Escritorio\GitHub\CAI\VentaRepuestos\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 H:\Escritorio\GitHub\CAI\VentaRepuestos\Entidades\obj\Debug\Entidades.dll
 H:\Escritorio\GitHub\CAI\VentaRepuestos\Entidades\obj\Debug\Entidades.pdb

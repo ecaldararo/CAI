@@ -15,17 +15,17 @@ namespace FormRepuestos
     public partial class FormListar : Form
     {
         FormMain _main;
-        Comercio _comercio;
+        NegocioController _comercio;
         Repuesto _repuestoSeleccionado;
         List<Categoria> _categorias;
-        public FormListar(FormMain frm, Comercio comercio, List<Categoria> categorias)
+        public FormListar(FormMain frm, NegocioController comercio, List<Categoria> categorias)
         {
             InitializeComponent();
             _main = frm;
             _comercio = comercio;
             _categorias = categorias;
             listBox1.DataSource = null;
-            listBox1.DataSource = _comercio.ListaProductos;
+            listBox1.DataSource = _comercio.Listar();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -42,12 +42,12 @@ namespace FormRepuestos
         public void Recargar()
         {
             listBox1.DataSource = null;
-            listBox1.DataSource = _comercio.ListaProductos;
+            listBox1.DataSource = _comercio.Listar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(_comercio.ListaProductos.Exists(x => x.Equals(_repuestoSeleccionado)))
+            if(_comercio.Listar().Exists(x => x.Equals(_repuestoSeleccionado)))
                 _comercio.QuitarRepuesto(_repuestoSeleccionado.Codigo);
             Recargar();
         }

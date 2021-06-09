@@ -1,0 +1,11 @@
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\bin\Debug\Datos.dll
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\bin\Debug\Datos.pdb
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\bin\Debug\Entidades.dll
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\bin\Debug\Entidades.pdb
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\obj\Debug\Datos.csproj.CopyComplete
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\obj\Debug\Datos.dll
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\obj\Debug\Datos.pdb
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\bin\Debug\Newtonsoft.Json.dll
+H:\Escritorio\GitHub\CAI\PracticaClientes\Datos\bin\Debug\Newtonsoft.Json.xml

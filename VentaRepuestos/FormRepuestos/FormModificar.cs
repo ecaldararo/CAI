@@ -15,11 +15,11 @@ namespace FormRepuestos
     public partial class FormModificar : Form
     {
         private Form _main;
-        private Comercio _comercio;
+        private NegocioController _comercio;
         private List<Categoria> _categorias;
         private Repuesto _repuesto;
         
-        public FormModificar(Form frm, Comercio comercio, List<Categoria> categorias, Repuesto repuesto)
+        public FormModificar(Form frm, NegocioController comercio, List<Categoria> categorias, Repuesto repuesto)
         {
             InitializeComponent();
             _main = frm;

@@ -15,9 +15,9 @@ namespace FormRepuestos
     public partial class FormNuevo : Form
     {
         private FormMain _main;
-        private Comercio _comercio;
+        private NegocioController _comercio;
         private List<Categoria> _categorias;
-        public FormNuevo(FormMain frm, Comercio comercio, List<Categoria> categorias)
+        public FormNuevo(FormMain frm, NegocioController comercio, List<Categoria> categorias)
         {
             InitializeComponent();
             _main = frm;
@@ -41,7 +41,7 @@ namespace FormRepuestos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Repuesto rep = new Repuesto(txtNombre.Text, 100, (Categoria)cmbCat.SelectedValue, (int)numStock.Value);
-            _comercio.ListaProductos.Add(rep);
+            _comercio.Listar().Add(rep);
             MessageBox.Show("Producto agregado");
             _main.Show();
             this.Close();
