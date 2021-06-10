@@ -52,8 +52,8 @@ namespace Datos
             NameValueCollection n = new NameValueCollection();
             n.Add("TNA", prestamo.TNA.ToString().Replace(",", "."));
             n.Add("Linea", prestamo.Linea);
-            n.Add("Plazo", prestamo.Plazo.ToString("0.00").Replace(",", "."));
-            n.Add("idCliente", "0");
+            n.Add("Plazo", prestamo.Plazo.ToString());
+            n.Add("idCliente", "1");
             n.Add("idTipo", prestamo.IdTipo.ToString());
             n.Add("Monto", prestamo.Monto.ToString("0.00").Replace(",","."));
             n.Add("Cuota", prestamo.CuotaTotal.ToString("0.00").Replace(",", "."));
