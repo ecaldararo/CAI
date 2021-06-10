@@ -50,11 +50,28 @@ namespace Datos
         private NameValueCollection ReverseMap(Prestamo prestamo)
         {
             NameValueCollection n = new NameValueCollection();
+            n.Add("TNA", prestamo.TNA.ToString().Replace(",", "."));
             n.Add("Linea", prestamo.Linea);
-            n.Add("Plazo", prestamo.Plazo.ToString());
-            n.Add("Monto", prestamo.Monto.ToString());
-            //n.Add("CuotaTotal", prestamo.CuotaTotal.ToString());
-            //n.Add("usuario", "825551");
+            n.Add("Plazo", prestamo.Plazo.ToString("0.00").Replace(",", "."));
+            n.Add("idCliente", "0");
+            n.Add("idTipo", prestamo.IdTipo.ToString());
+            n.Add("Monto", prestamo.Monto.ToString("0.00").Replace(",","."));
+            n.Add("Cuota", prestamo.CuotaTotal.ToString("0.00").Replace(",", "."));
+            n.Add("Usuario", "825551");
+            n.Add("id", "0");
+
+            //n.Add("TipoPrest.TNA", "0");
+            //n.Add("TipoPrest.Linea", "0");
+            //n.Add("TipoPrest.id", "0");
+
+            //n.Add("TNA", "2");
+            //n.Add("Linea", "2");
+            //n.Add("Plazo", "2");
+            //n.Add("idCliente", "1");
+            //n.Add("idTipo", "2");
+            //n.Add("Monto", "2");
+            //n.Add("Cuota", "0.00");
+            //n.Add("Usuario", "825551");
             return n;
         }
     }

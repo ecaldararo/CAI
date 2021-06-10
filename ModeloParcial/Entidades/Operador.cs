@@ -10,7 +10,7 @@ namespace Entidades
     {
         private List<Prestamo> _prestamos;
         private double _comision;
-        private double _procentajeComision;
+        private static double _procentajeComision = 15;
 
         public double Comision { get => _comision; }
         public double ProcentajeComision { get => _procentajeComision;  }

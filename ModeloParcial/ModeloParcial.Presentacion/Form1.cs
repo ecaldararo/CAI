@@ -77,15 +77,16 @@ namespace ModeloParcial.Presentacion
                 ValidarTipo();
                 _prestamoSimulado.Linea = _tipoPrestamo.Linea;
                 _prestamoSimulado.TNA = _tipoPrestamo.TNA;
+                _prestamoSimulado.IdTipo = _tipoPrestamo.Id;
                 _prestamoSimulado.Monto = Validaciones.ValidarDouble(txtMonto.Text);
                 _prestamoSimulado.Plazo = Validaciones.ValidarInt(txtPlazo.Text);
                 if (_prestamoSimulado.Plazo != 0)
                 {
                     double capital = (_prestamoSimulado.Monto / (Double)_prestamoSimulado.Plazo);
                     double TNA = _prestamoSimulado.TNA;
-                    txtCuotaCapital.Text = capital.ToString();
-                    txtCuotaInteres.Text = (capital * TNA / 12 / 100).ToString();
-                    txtCuotaTotal.Text = (capital + (capital * TNA / 12 / 100)).ToString();
+                    txtCuotaCapital.Text = capital.ToString("0.00");
+                    txtCuotaInteres.Text = (capital * TNA / 12 / 100).ToString("0.00");
+                    txtCuotaTotal.Text = (capital + (capital * TNA / 12 / 100)).ToString("0.00");
                     btnAlta.Enabled = true;
                 }
                     
@@ -119,6 +120,7 @@ namespace ModeloParcial.Presentacion
                 _prestamoAlta.Monto = _prestamoSimulado.Monto;
                 _prestamoAlta.Plazo = _prestamoSimulado.Plazo;
                 _prestamoAlta.Linea = _prestamoSimulado.Linea;
+                _prestamoAlta.IdTipo = _prestamoSimulado.IdTipo;
                 _prestamoAlta.CuotaTotal = _prestamoSimulado.CuotaTotal;
 
                 string rdo = _admPrestamo.Alta(_prestamoAlta);
