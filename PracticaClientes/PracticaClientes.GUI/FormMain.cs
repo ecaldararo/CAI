@@ -26,9 +26,9 @@ namespace PracticaClientes.GUI
 
         private void btnCuentas_Click(object sender, EventArgs e)
         {
-            //FormCliente frm = new FormCliente(this, _cliente);
-            //frm.Owner = this;
-            //frm.Show();
+            FormCuenta frm = new FormCuenta();
+            frm.Owner = this;
+            frm.Show();
             //this.Hide();
         }
 
@@ -37,7 +37,7 @@ namespace PracticaClientes.GUI
             FormCliente frm = new FormCliente(this);
             frm.Owner = this;
             frm.Show();
-            this.Hide();
+            //this.Hide();
         }
     }
 }

@@ -57,10 +57,11 @@ namespace PracticaClientes.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 450);
+            this.ClientSize = new System.Drawing.Size(365, 244);
             this.Controls.Add(this.btnCuentas);
             this.Controls.Add(this.btnClientes);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);

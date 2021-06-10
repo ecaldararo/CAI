@@ -34,11 +34,11 @@ namespace Datos
             return resultado;
         }
 
-        public Cuenta TraerPorId(int id)
+        public Cuenta TraerPorId(int idCliente)
         {
             // IR A EL REPOSITORIO DE DATOS (bd, file, webservice)
 
-            string json2 = WebHelper.Get("/cuenta/"+id);
+            string json2 = WebHelper.Get("/cuenta/"+ idCliente);
 
             Cuenta cuenta = MappearCuenta(json2);
 
@@ -62,11 +62,37 @@ namespace Datos
             return resultado;
         }
 
+        public TransactionResult Actualizar(Cuenta cuenta)
+        {
+            NameValueCollection obj = ReverseMapActualizar(cuenta);
+
+            string json = WebHelper.Post("/cuenta", obj);
+
+            TransactionResult resultado = JsonConvert.DeserializeObject<TransactionResult>(json);
+
+            return resultado;
+        }
+
         private NameValueCollection ReverseMap(Cuenta cuenta)
         {
             NameValueCollection n = new NameValueCollection();
-            n.Add("id", cuenta.Id.ToString());
+            n.Add("id", cuenta.Id.ToString()); 
+            n.Add("idCliente", cuenta.IdCliente.ToString()); 
             n.Add("descripcion", cuenta.Descripcion);
+            n.Add("nroCuenta", cuenta.NroCuenta.ToString());
+            n.Add("fechaApertura", cuenta.FechaApertura.ToString("yyyy-MM-dd"));//cuenta.FechaNacimiento.ToString("yyyy-MM-dd")
+            n.Add("fechaModificacion", cuenta.FechaModificacion.ToString("yyyy-MM-dd"));//cuenta.FechaNacimiento.ToString("yyyy-MM-dd")
+            n.Add("usuario", "825551");
+            return n;
+        }
+
+        private NameValueCollection ReverseMapActualizar(Cuenta cuenta)
+        {
+            NameValueCollection n = new NameValueCollection();
+            n.Add("id", cuenta.Id.ToString());
+            n.Add("idCliente", cuenta.IdCliente.ToString());
+            n.Add("descripcion", cuenta.Descripcion);
+            n.Add("saldo", cuenta.Saldo.ToString());
             n.Add("nroCuenta", cuenta.NroCuenta.ToString());
             n.Add("fechaApertura", cuenta.FechaApertura.ToString("yyyy-MM-dd"));//cuenta.FechaNacimiento.ToString("yyyy-MM-dd")
             n.Add("fechaModificacion", cuenta.FechaModificacion.ToString("yyyy-MM-dd"));//cuenta.FechaNacimiento.ToString("yyyy-MM-dd")

@@ -34,6 +34,7 @@ namespace PracticaClientes.GUI
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnActualizar
@@ -50,9 +51,9 @@ namespace PracticaClientes.GUI
             // 
             this.listClientes.FormattingEnabled = true;
             this.listClientes.ItemHeight = 16;
-            this.listClientes.Location = new System.Drawing.Point(118, 93);
+            this.listClientes.Location = new System.Drawing.Point(12, 93);
             this.listClientes.Name = "listClientes";
-            this.listClientes.Size = new System.Drawing.Size(456, 228);
+            this.listClientes.Size = new System.Drawing.Size(686, 228);
             this.listClientes.TabIndex = 1;
             this.listClientes.SelectedIndexChanged += new System.EventHandler(this.listClientes_SelectedIndexChanged);
             // 
@@ -86,17 +87,29 @@ namespace PracticaClientes.GUI
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(262, 396);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(170, 42);
+            this.btnVolver.TabIndex = 5;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.listClientes);
             this.Controls.Add(this.btnActualizar);
             this.Name = "FormCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FormCliente_Load);
             this.ResumeLayout(false);
@@ -110,6 +123,7 @@ namespace PracticaClientes.GUI
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
 

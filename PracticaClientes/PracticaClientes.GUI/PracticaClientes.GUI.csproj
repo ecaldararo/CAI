@@ -50,11 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormCliente.cs">
+    <Compile Include="Cliente\FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCliente.Designer.cs">
+    <Compile Include="Cliente\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\FormModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\FormModificar.Designer.cs">
+      <DependentUpon>FormModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuenta\FormCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuenta\FormCuenta.Designer.cs">
+      <DependentUpon>FormCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -62,21 +74,27 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNuevo.cs">
+    <Compile Include="Cliente\FormNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNuevo.Designer.cs">
+    <Compile Include="Cliente\FormNuevo.Designer.cs">
       <DependentUpon>FormNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCliente.resx">
+    <EmbeddedResource Include="Cliente\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\FormModificar.resx">
+      <DependentUpon>FormModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuenta\FormCuenta.resx">
+      <DependentUpon>FormCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNuevo.resx">
+    <EmbeddedResource Include="Cliente\FormNuevo.resx">
       <DependentUpon>FormNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

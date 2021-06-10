@@ -45,6 +45,11 @@ namespace Datos
             return resultado;
         }
 
+        public TransactionResult Actualizar(Cliente cliente)
+        {
+            throw new NotImplementedException(); // no funciona la act de clientes.
+        }
+
         private NameValueCollection ReverseMap(Cliente cliente)
         {
             NameValueCollection n = new NameValueCollection();

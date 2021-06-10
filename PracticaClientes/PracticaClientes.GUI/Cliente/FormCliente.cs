@@ -14,12 +14,10 @@ namespace PracticaClientes.GUI
 {
     public partial class FormCliente : Form
     {
-        private Cliente _cliente;
         private AdmCliente _admCliente;
         public FormCliente(FormMain frm)
         {
             InitializeComponent();
-            _cliente = new Cliente();
             _admCliente = new AdmCliente();
         }
 
@@ -37,7 +35,7 @@ namespace PracticaClientes.GUI
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            FormNuevo frm = new FormNuevo(this,_cliente);
+            FormNuevo frm = new FormNuevo(this,new Cliente());
             frm.Owner = this;
             frm.Show();
             this.Hide();
@@ -51,7 +49,17 @@ namespace PracticaClientes.GUI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            Cliente cli = new Cliente();
+            cli = (Cliente)listClientes.SelectedValue;
+            FormModificar frm = new FormModificar(this,cli);
+            frm.Owner = this;
+            frm.Show();
+        }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Owner.Show();
+            this.Close();
         }
     }
 }
