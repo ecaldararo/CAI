@@ -38,7 +38,7 @@ namespace Negocio
         public double TraerComisiones()
         {
             _operador.Prestamos = _prestamoMapper.TraerPorRegistro();
-            _operador.Comision = _operador.SetearComision();
+            //_operador.Comision;
 
             return _operador.Comision;
         }

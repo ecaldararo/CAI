@@ -9,7 +9,6 @@ namespace Entidades
     public class Operador
     {
         private List<Prestamo> _prestamos;
-        private double _comision;
         private static double _procentajeComision = 15;
 
         public Operador()
@@ -17,15 +16,15 @@ namespace Entidades
             _prestamos = new List<Prestamo>();
         }
 
-        public double Comision { get => _comision; set => _comision = value; }
+        public double Comision { get => this.ProcentajeComision / 100 * this.Prestamos.Sum(x => x.Monto); }
         public double ProcentajeComision { get => _procentajeComision;  }
         public List<Prestamo> Prestamos { get => _prestamos; set => _prestamos = value; }
 
-        public double SetearComision()
-        {
-            this.Comision = this.ProcentajeComision / 100 * this.Prestamos.Sum(x => x.Monto);
+        //public double SetearComision()
+        //{
+        //    this._comision = this.ProcentajeComision / 100 * this.Prestamos.Sum(x => x.Monto);
 
-            return this.Comision;
-        }
+        //    return this.Comision;
+        //}
     }
 }
