@@ -48,7 +48,7 @@ namespace ModeloParcial.Presentacion
             this.txtTNA = new System.Windows.Forms.TextBox();
             this.txtLinea = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtComisionTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.listPrestamos = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
@@ -76,17 +76,17 @@ namespace ModeloParcial.Presentacion
             this.groupBox1.Controls.Add(this.txtLinea);
             this.groupBox1.Location = new System.Drawing.Point(24, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(428, 454);
+            this.groupBox1.Size = new System.Drawing.Size(621, 454);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TIPOS DE PRESTAMO";
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(230, 399);
+            this.btnAlta.Location = new System.Drawing.Point(403, 391);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(192, 46);
-            this.btnAlta.TabIndex = 16;
+            this.btnAlta.TabIndex = 5;
             this.btnAlta.Text = "ALTA";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
@@ -94,7 +94,7 @@ namespace ModeloParcial.Presentacion
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(228, 364);
+            this.label7.Location = new System.Drawing.Point(401, 356);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 17);
             this.label7.TabIndex = 15;
@@ -103,7 +103,7 @@ namespace ModeloParcial.Presentacion
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(228, 321);
+            this.label6.Location = new System.Drawing.Point(401, 313);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 17);
             this.label6.TabIndex = 14;
@@ -112,7 +112,7 @@ namespace ModeloParcial.Presentacion
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(228, 285);
+            this.label5.Location = new System.Drawing.Point(401, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 17);
             this.label5.TabIndex = 13;
@@ -121,7 +121,7 @@ namespace ModeloParcial.Presentacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(228, 174);
+            this.label4.Location = new System.Drawing.Point(401, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 17);
             this.label4.TabIndex = 12;
@@ -130,7 +130,7 @@ namespace ModeloParcial.Presentacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(228, 133);
+            this.label3.Location = new System.Drawing.Point(401, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 17);
             this.label3.TabIndex = 11;
@@ -139,7 +139,7 @@ namespace ModeloParcial.Presentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 88);
+            this.label2.Location = new System.Drawing.Point(401, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 17);
             this.label2.TabIndex = 10;
@@ -147,10 +147,10 @@ namespace ModeloParcial.Presentacion
             // 
             // btnSimular
             // 
-            this.btnSimular.Location = new System.Drawing.Point(230, 217);
+            this.btnSimular.Location = new System.Drawing.Point(403, 209);
             this.btnSimular.Name = "btnSimular";
             this.btnSimular.Size = new System.Drawing.Size(192, 47);
-            this.btnSimular.TabIndex = 9;
+            this.btnSimular.TabIndex = 4;
             this.btnSimular.Text = "Simular";
             this.btnSimular.UseVisualStyleBackColor = true;
             this.btnSimular.Click += new System.EventHandler(this.btnSimular_Click);
@@ -158,7 +158,7 @@ namespace ModeloParcial.Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(230, 50);
+            this.label1.Location = new System.Drawing.Point(403, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 8;
@@ -170,83 +170,90 @@ namespace ModeloParcial.Presentacion
             this.listTiposPrestamo.ItemHeight = 16;
             this.listTiposPrestamo.Location = new System.Drawing.Point(6, 41);
             this.listTiposPrestamo.Name = "listTiposPrestamo";
-            this.listTiposPrestamo.Size = new System.Drawing.Size(218, 404);
+            this.listTiposPrestamo.Size = new System.Drawing.Size(369, 404);
             this.listTiposPrestamo.TabIndex = 7;
             this.listTiposPrestamo.SelectedIndexChanged += new System.EventHandler(this.listTiposPrestamo_SelectedIndexChanged);
             // 
             // txtCuotaTotal
             // 
-            this.txtCuotaTotal.Location = new System.Drawing.Point(322, 363);
+            this.txtCuotaTotal.Location = new System.Drawing.Point(495, 355);
             this.txtCuotaTotal.Name = "txtCuotaTotal";
+            this.txtCuotaTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCuotaTotal.Size = new System.Drawing.Size(100, 22);
             this.txtCuotaTotal.TabIndex = 6;
             // 
             // txtCuotaInteres
             // 
-            this.txtCuotaInteres.Location = new System.Drawing.Point(322, 325);
+            this.txtCuotaInteres.Location = new System.Drawing.Point(495, 317);
             this.txtCuotaInteres.Name = "txtCuotaInteres";
+            this.txtCuotaInteres.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCuotaInteres.Size = new System.Drawing.Size(100, 22);
-            this.txtCuotaInteres.TabIndex = 5;
+            this.txtCuotaInteres.TabIndex = 50;
             // 
             // txtCuotaCapital
             // 
-            this.txtCuotaCapital.Location = new System.Drawing.Point(322, 284);
+            this.txtCuotaCapital.Location = new System.Drawing.Point(495, 276);
             this.txtCuotaCapital.Name = "txtCuotaCapital";
+            this.txtCuotaCapital.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCuotaCapital.Size = new System.Drawing.Size(100, 22);
-            this.txtCuotaCapital.TabIndex = 4;
+            this.txtCuotaCapital.TabIndex = 9;
             // 
             // txtPlazo
             // 
-            this.txtPlazo.Location = new System.Drawing.Point(322, 175);
+            this.txtPlazo.Location = new System.Drawing.Point(450, 167);
             this.txtPlazo.Name = "txtPlazo";
-            this.txtPlazo.Size = new System.Drawing.Size(100, 22);
+            this.txtPlazo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPlazo.Size = new System.Drawing.Size(145, 22);
             this.txtPlazo.TabIndex = 3;
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(322, 132);
+            this.txtMonto.Location = new System.Drawing.Point(450, 124);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(100, 22);
+            this.txtMonto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtMonto.Size = new System.Drawing.Size(145, 22);
             this.txtMonto.TabIndex = 2;
             // 
             // txtTNA
             // 
-            this.txtTNA.Location = new System.Drawing.Point(322, 92);
+            this.txtTNA.Location = new System.Drawing.Point(450, 84);
             this.txtTNA.Name = "txtTNA";
-            this.txtTNA.Size = new System.Drawing.Size(100, 22);
+            this.txtTNA.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTNA.Size = new System.Drawing.Size(145, 22);
             this.txtTNA.TabIndex = 1;
             // 
             // txtLinea
             // 
-            this.txtLinea.Location = new System.Drawing.Point(322, 50);
+            this.txtLinea.Location = new System.Drawing.Point(450, 42);
             this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(100, 22);
+            this.txtLinea.Size = new System.Drawing.Size(145, 22);
             this.txtLinea.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.txtComisionTotal);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.listPrestamos);
-            this.groupBox2.Location = new System.Drawing.Point(458, 12);
+            this.groupBox2.Location = new System.Drawing.Point(669, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(395, 454);
+            this.groupBox2.Size = new System.Drawing.Size(531, 454);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PRESTAMOS DADOS DE ALTA";
             // 
-            // textBox8
+            // txtComisionTotal
             // 
-            this.textBox8.Location = new System.Drawing.Point(188, 376);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(179, 22);
-            this.textBox8.TabIndex = 16;
+            this.txtComisionTotal.Location = new System.Drawing.Point(244, 376);
+            this.txtComisionTotal.Name = "txtComisionTotal";
+            this.txtComisionTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtComisionTotal.Size = new System.Drawing.Size(179, 22);
+            this.txtComisionTotal.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 376);
+            this.label8.Location = new System.Drawing.Point(35, 376);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(157, 25);
             this.label8.TabIndex = 16;
@@ -255,10 +262,12 @@ namespace ModeloParcial.Presentacion
             // listPrestamos
             // 
             this.listPrestamos.FormattingEnabled = true;
+            this.listPrestamos.HorizontalScrollbar = true;
             this.listPrestamos.ItemHeight = 16;
-            this.listPrestamos.Location = new System.Drawing.Point(6, 41);
+            this.listPrestamos.Location = new System.Drawing.Point(16, 41);
             this.listPrestamos.Name = "listPrestamos";
-            this.listPrestamos.Size = new System.Drawing.Size(363, 308);
+            this.listPrestamos.ScrollAlwaysVisible = true;
+            this.listPrestamos.Size = new System.Drawing.Size(499, 308);
             this.listPrestamos.TabIndex = 10;
             this.listPrestamos.SelectedIndexChanged += new System.EventHandler(this.listPrestamos_SelectedIndexChanged);
             // 
@@ -266,7 +275,7 @@ namespace ModeloParcial.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 478);
+            this.ClientSize = new System.Drawing.Size(1224, 478);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -301,7 +310,7 @@ namespace ModeloParcial.Presentacion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtComisionTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox listPrestamos;
     }

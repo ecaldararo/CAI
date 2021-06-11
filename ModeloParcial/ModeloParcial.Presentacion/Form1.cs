@@ -38,18 +38,25 @@ namespace ModeloParcial.Presentacion
             txtLinea.Enabled = false;
             txtTNA.Enabled = false;
             CargarListaPrestamos();
+            
             btnAlta.Enabled = false;
+            txtComisionTotal.Enabled = false;
+            txtCuotaCapital.Enabled = false;
+            txtCuotaInteres.Enabled = false;
+            txtCuotaTotal.Enabled = false;
         }
 
         private void CargarListaTipo()
         {
             listTiposPrestamo.DataSource = null;
             listTiposPrestamo.DataSource = _admTipo.TraerTodos();
+            
         }
         private void CargarListaPrestamos()
         {
             listPrestamos.DataSource = null;
             listPrestamos.DataSource = _admPrestamo.TraerTodos();
+            txtComisionTotal.Text = _admPrestamo.TraerComisiones().ToString("0,000.0");
         }
 
         private void listTiposPrestamo_SelectedIndexChanged(object sender, EventArgs e)

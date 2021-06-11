@@ -55,7 +55,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"Días {Plazo} - ARS Capital Inicial(interés Interés) – tipo o(desc del tipo plazo fijo) - )";
+            return $"Días {Plazo} - Monto {Monto} – {Linea} - {TNA} - ARS Capital Inicial(interés {CuotaInteres}){CuotaTotal} )";
         }
     }
 }
