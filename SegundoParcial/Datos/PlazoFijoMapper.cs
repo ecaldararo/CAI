@@ -37,7 +37,7 @@ namespace Datos
             NameValueCollection n = new NameValueCollection();
             n.Add("idCliente", "1");
             n.Add("id", "1");
-            n.Add("Tipo", "1"); //pf.Tipo.Id.ToString()
+            n.Add("Tipo", pf.TipoPlazoFijo.Id.ToString()); //
             n.Add("CapitalInicial", pf.CapitalInicial.ToString("0.00"));
             n.Add("Dias", pf.Dias.ToString());
             n.Add("Tasa", pf.Tasa.ToString("0.00"));

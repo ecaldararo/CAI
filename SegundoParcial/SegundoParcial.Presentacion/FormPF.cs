@@ -70,6 +70,7 @@ namespace SegundoParcial.Presentacion
                 _simulado.Tasa = Validaciones.ValidarDouble(txtTasaInteres.Text);
                 _simulado.CapitalInicial = Validaciones.ValidarDouble(txtCapitalAInvertir.Text);
                 _simulado.Dias = Validaciones.ValidarInt(txtDias.Text);
+                _simulado.TipoPlazoFijo = _tipo;
                 txtInteresARecibir.Text = _simulado.Interes.ToString();
                 txtMontoFinal.Text = _simulado.MontoFinal.ToString();
             }
@@ -109,7 +110,8 @@ namespace SegundoParcial.Presentacion
 
         private void cmbTipoPlazoFijo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtTasaInteres.Text = ((TipoPlazoFijo)cmbTipoPlazoFijo.SelectedValue).Tasa.ToString();
+            _tipo = (TipoPlazoFijo)cmbTipoPlazoFijo.SelectedItem;
+            txtTasaInteres.Text = _tipo.Tasa.ToString();
         }
 
         private void lstPlazoFijo_SelectedIndexChanged(object sender, EventArgs e)
