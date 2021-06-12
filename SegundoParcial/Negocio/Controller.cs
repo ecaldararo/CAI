@@ -22,7 +22,7 @@ namespace Negocio
 
             _tiposPF = new List<TipoPlazoFijo>();
             _tiposPF.Add(new TipoPlazoFijo(1, "Plazo Fijo Web", 0.41));
-            _tiposPF.Add(new TipoPlazoFijo(2, "Plazo Fijo UVA", 0.3));
+            _tiposPF.Add(new TipoPlazoFijo(2, "Plazo Fijo UVA", 0.03));
 
             
         }

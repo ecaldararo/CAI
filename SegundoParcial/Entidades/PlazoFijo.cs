@@ -26,13 +26,14 @@ namespace Entidades
 
         public PlazoFijo()
         {
+            tipoPlazoFijo = new TipoPlazoFijo();
         }
 
         public int Id { get => id; set => id = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public TipoPlazoFijo TipoPlazoFijo { get => tipoPlazoFijo; set => tipoPlazoFijo = value; }
 
-        public int Tipo { get => TipoPlazoFijo.Id; set => tipo = value; }
+        public int Tipo { get => tipo; set => tipo = value; }
         public double Tasa { get => tasa; set => tasa = value; }
         public int Dias { get => dias; set => dias = value; }
         public double CapitalInicial { get => capitalInicial; set => capitalInicial = value; }
@@ -43,7 +44,7 @@ namespace Entidades
 
         public override string ToString()
         {
-            return $"{Id} {Dias} días - ARS {CapitalInicial.ToString("0.00")} (Interés {Interes.ToString("0.00")} - tipo o ()";
+            return $"{Id} \t{Dias} días - \tARS {CapitalInicial.ToString("#,##0")} \t(Interés {Interes.ToString("#,##0.0")} - Tasa:{TipoPlazoFijo.Tasa*100}% - tipo o ({TipoPlazoFijo.Descripcion})";
         }
     }
 }

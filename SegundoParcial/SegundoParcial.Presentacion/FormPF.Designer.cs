@@ -73,6 +73,7 @@ namespace SegundoParcial.Presentacion
             this.txtTasaInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTasaInteres.Location = new System.Drawing.Point(160, 88);
             this.txtTasaInteres.Name = "txtTasaInteres";
+            this.txtTasaInteres.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtTasaInteres.Size = new System.Drawing.Size(123, 21);
             this.txtTasaInteres.TabIndex = 1;
             // 
@@ -81,6 +82,7 @@ namespace SegundoParcial.Presentacion
             this.txtCapitalAInvertir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCapitalAInvertir.Location = new System.Drawing.Point(160, 125);
             this.txtCapitalAInvertir.Name = "txtCapitalAInvertir";
+            this.txtCapitalAInvertir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCapitalAInvertir.Size = new System.Drawing.Size(123, 21);
             this.txtCapitalAInvertir.TabIndex = 2;
             // 
@@ -89,6 +91,7 @@ namespace SegundoParcial.Presentacion
             this.txtDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDias.Location = new System.Drawing.Point(160, 164);
             this.txtDias.Name = "txtDias";
+            this.txtDias.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDias.Size = new System.Drawing.Size(123, 21);
             this.txtDias.TabIndex = 3;
             // 
@@ -97,6 +100,7 @@ namespace SegundoParcial.Presentacion
             this.txtInteresARecibir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInteresARecibir.Location = new System.Drawing.Point(160, 200);
             this.txtInteresARecibir.Name = "txtInteresARecibir";
+            this.txtInteresARecibir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtInteresARecibir.Size = new System.Drawing.Size(123, 21);
             this.txtInteresARecibir.TabIndex = 4;
             // 
@@ -105,6 +109,7 @@ namespace SegundoParcial.Presentacion
             this.txtMontoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMontoFinal.Location = new System.Drawing.Point(160, 236);
             this.txtMontoFinal.Name = "txtMontoFinal";
+            this.txtMontoFinal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtMontoFinal.Size = new System.Drawing.Size(123, 21);
             this.txtMontoFinal.TabIndex = 5;
             // 
@@ -253,6 +258,7 @@ namespace SegundoParcial.Presentacion
             this.txtComisionTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComisionTotal.Location = new System.Drawing.Point(211, 351);
             this.txtComisionTotal.Name = "txtComisionTotal";
+            this.txtComisionTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtComisionTotal.Size = new System.Drawing.Size(123, 21);
             this.txtComisionTotal.TabIndex = 17;
             // 
@@ -261,6 +267,7 @@ namespace SegundoParcial.Presentacion
             this.txtMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMontoTotal.Location = new System.Drawing.Point(211, 324);
             this.txtMontoTotal.Name = "txtMontoTotal";
+            this.txtMontoTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtMontoTotal.Size = new System.Drawing.Size(123, 21);
             this.txtMontoTotal.TabIndex = 15;
             // 
@@ -297,6 +304,7 @@ namespace SegundoParcial.Presentacion
             // lstPlazoFijo
             // 
             this.lstPlazoFijo.FormattingEnabled = true;
+            this.lstPlazoFijo.HorizontalScrollbar = true;
             this.lstPlazoFijo.Location = new System.Drawing.Point(18, 57);
             this.lstPlazoFijo.Name = "lstPlazoFijo";
             this.lstPlazoFijo.Size = new System.Drawing.Size(351, 251);
@@ -307,7 +315,7 @@ namespace SegundoParcial.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(924, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormPF";

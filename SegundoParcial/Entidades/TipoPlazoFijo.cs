@@ -19,9 +19,14 @@ namespace Entidades
             _tasa = tasa;
         }
 
-        public int Id { get => _id;  }
-        public double Tasa { get => _tasa;  }
-        public string Descripcion { get => _descripcion;  }
+        public TipoPlazoFijo()
+        {
+
+        }
+
+        public int Id { get => _id; set => _id = value; }
+        public double Tasa { get => _tasa; set => _tasa = value; }
+        public string Descripcion { get => _descripcion; set => _descripcion = value; }
 
         public override string ToString()
         {

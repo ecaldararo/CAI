@@ -39,7 +39,7 @@ namespace SegundoParcial.Presentacion
             txtInteresARecibir.Enabled = false;
             txtMontoFinal.Enabled = false;
             CargarTiposPF();
-            _tipo = (TipoPlazoFijo)cmbTipoPlazoFijo.SelectedItem;
+            _tipo = (TipoPlazoFijo)cmbTipoPlazoFijo.SelectedValue;
             //CargarTasa();
             CargarPF();
             
@@ -47,6 +47,13 @@ namespace SegundoParcial.Presentacion
         private void CargarPF()
         {
             _op._listaPlazosFijos = _operador.TraerTodos();
+            
+
+            foreach (PlazoFijo p in _op._listaPlazosFijos)
+            {
+                p.Tipo = _operador._tiposPF.FirstOrDefault(x => x.Id == p.Tipo).Id;
+                p.TipoPlazoFijo = _operador._tiposPF.FirstOrDefault(x => x.Id == p.Tipo);
+            }
 
             lstPlazoFijo.DataSource = null;
             lstPlazoFijo.DataSource = _op._listaPlazosFijos;
@@ -116,8 +123,8 @@ namespace SegundoParcial.Presentacion
 
         private void lstPlazoFijo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtMontoTotal.Text = _op.MontoTotal.ToString("0.00");
-            txtComisionTotal.Text = _op.Comision.ToString("0.00");
+            txtMontoTotal.Text = _op.MontoTotal.ToString("#,##0.00");
+            txtComisionTotal.Text = _op.Comision.ToString("#,##0.00");
         }
     }
 }
