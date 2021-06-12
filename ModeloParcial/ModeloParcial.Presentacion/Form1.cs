@@ -82,18 +82,19 @@ namespace ModeloParcial.Presentacion
             try
             {
                 ValidarTipo();
-                _prestamoSimulado.Linea = _tipoPrestamo.Linea;
-                _prestamoSimulado.TNA = _tipoPrestamo.TNA;
-                _prestamoSimulado.IdTipo = _tipoPrestamo.Id;
+                _prestamoSimulado._tipoPrestamo.Linea = _tipoPrestamo.Linea;
+                _prestamoSimulado._tipoPrestamo.TNA = _tipoPrestamo.TNA;
+                _prestamoSimulado._tipoPrestamo.Id = _tipoPrestamo.Id;
                 _prestamoSimulado.Monto = Validaciones.ValidarDouble(txtMonto.Text);
                 _prestamoSimulado.Plazo = Validaciones.ValidarInt(txtPlazo.Text);
                 if (_prestamoSimulado.Plazo != 0)
                 {
                     double capital = (_prestamoSimulado.Monto / (Double)_prestamoSimulado.Plazo);
-                    double TNA = _prestamoSimulado.TNA;
-                    txtCuotaCapital.Text = capital.ToString("0.00");
-                    txtCuotaInteres.Text = (capital * TNA / 12 / 100).ToString("0.00");
-                    txtCuotaTotal.Text = (capital + (capital * TNA / 12 / 100)).ToString("0.00");
+                    double TNA = _prestamoSimulado._tipoPrestamo.TNA;
+                    txtCuotaCapital.Text = _prestamoSimulado.CuotaCapital.ToString("0.00");
+                    txtCuotaInteres.Text = _prestamoSimulado.CuotaInteres.ToString("0.00");
+                    //txtCuotaTotal.Text = (capital + (capital * TNA / 12 / 100)).ToString("0.00");
+                    txtCuotaTotal.Text = _prestamoSimulado.CuotaTotal.ToString("0.00");
                     btnAlta.Enabled = true;
                 }
                     
@@ -123,12 +124,11 @@ namespace ModeloParcial.Presentacion
                 ValidarTipo();
 
                 _prestamoAlta = new Prestamo();
-                _prestamoAlta.TNA = _prestamoSimulado.TNA;
+                _prestamoAlta._tipoPrestamo.TNA = _prestamoSimulado._tipoPrestamo.TNA;
                 _prestamoAlta.Monto = _prestamoSimulado.Monto;
                 _prestamoAlta.Plazo = _prestamoSimulado.Plazo;
-                _prestamoAlta.Linea = _prestamoSimulado.Linea;
-                _prestamoAlta.IdTipo = _prestamoSimulado.IdTipo;
-                _prestamoAlta.CuotaTotal = _prestamoSimulado.CuotaTotal;
+                _prestamoAlta._tipoPrestamo.Linea = _prestamoSimulado._tipoPrestamo.Linea;
+                _prestamoAlta._tipoPrestamo.Id = _prestamoSimulado._tipoPrestamo.Id;
 
                 string rdo = _admPrestamo.Alta(_prestamoAlta);
                 MessageBox.Show(rdo);

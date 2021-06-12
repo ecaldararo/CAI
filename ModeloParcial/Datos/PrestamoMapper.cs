@@ -22,8 +22,6 @@ namespace Datos
         {
             int registro = Convert.ToInt32(ConfigurationManager.AppSettings["NRO_REGISTRO"]);
 
-            // IR A EL REPOSITORIO DE DATOS (bd, file, webservice)
-
             string json2 = WebHelper.Get("/prestamo/"+registro);
 
             List<Prestamo> prestamos = MappearLista(json2);
@@ -50,11 +48,11 @@ namespace Datos
         private NameValueCollection ReverseMap(Prestamo prestamo)
         {
             NameValueCollection n = new NameValueCollection();
-            n.Add("TNA", prestamo.TNA.ToString().Replace(",", "."));
-            n.Add("Linea", prestamo.Linea);
+            n.Add("TNA", prestamo._tipoPrestamo.TNA.ToString().Replace(",", "."));
+            n.Add("Linea", prestamo._tipoPrestamo.Linea);
             n.Add("Plazo", prestamo.Plazo.ToString());
             n.Add("idCliente", "1");
-            n.Add("idTipo", prestamo.IdTipo.ToString());
+            n.Add("idTipo", prestamo._tipoPrestamo.Id.ToString());
             n.Add("Monto", prestamo.Monto.ToString("0.00").Replace(",","."));
             n.Add("Cuota", prestamo.CuotaTotal.ToString("0.00").Replace(",", "."));
             n.Add("Usuario", "825551");

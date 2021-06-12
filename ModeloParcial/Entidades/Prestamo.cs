@@ -10,14 +10,16 @@ namespace Entidades
     [DataContract]
     public class Prestamo
     {
-        private string _linea;
-        private double _TNA;
-        private int _idTipo;
+        //private string _linea;
+        //private double _TNA;
+        //private int _idTipo;
         private int _plazo;
         private double _monto;
         private string _usuario;
         private int _id;
         private double _cuotaTotal;
+
+        [DataMember(Name = "tipoPrest")]
         public TipoPrestamo _tipoPrestamo;
 
         public Prestamo()
@@ -25,11 +27,14 @@ namespace Entidades
             _tipoPrestamo = new TipoPrestamo();
         }
 
-        [DataMember(Name = "Linea")]
-        public string Linea { get => _linea; set => _linea = value; }
+        //[DataMember(Name = "idTipo")]
+        //public int IdTipo { get => _idTipo; set => _idTipo = value; }
 
-        [DataMember(Name = "TNA")]
-        public double TNA { get => _TNA; set => _TNA = value; }
+        //[DataMember(Name = "Linea")]
+        //public string Linea { get => _linea; }
+
+        //[DataMember(Name = "TNA")]
+        //public double TNA { get => _TNA;  }
 
         [DataMember(Name = "Plazo")]
         public int Plazo { get => _plazo; set => _plazo = value; }
@@ -43,19 +48,17 @@ namespace Entidades
         [DataMember(Name ="id")]
         public int Id { get => _id; set => _id = value; }
 
-
         public double CuotaCapital { get => Monto/Plazo;}
-        public double CuotaInteres { get => CuotaCapital * TNA/12/100 ; }
+        public double CuotaInteres { get => CuotaCapital * _tipoPrestamo.TNA / 12/100 ; }
 
         [DataMember(Name = "Cuota")]
-        public double CuotaTotal { get => _cuotaTotal; set => _cuotaTotal = CuotaCapital + CuotaInteres; }
+        public double CuotaTotal { get => CuotaCapital + CuotaInteres; }
 
-        [DataMember(Name = "idTipo")]
-        public int IdTipo { get => _idTipo; set => _idTipo = value; }
+
 
         public override string ToString()
         {
-            return $"ID{Id}) – {Linea} - Días {Plazo} - Monto {Monto} - {TNA} - ARS Capital Inicial(interés {CuotaInteres}){CuotaTotal} )";
+            return $"ID{Id}) – Línea:{_tipoPrestamo.Linea} - Días {Plazo} - Monto {Monto} - TNA:{_tipoPrestamo.TNA} - ARS Capital Inicial(interés {CuotaInteres}){CuotaTotal} )";
         }
     }
 }
