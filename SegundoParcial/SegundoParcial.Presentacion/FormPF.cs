@@ -78,8 +78,8 @@ namespace SegundoParcial.Presentacion
                 _simulado.CapitalInicial = Validaciones.ValidarDouble(txtCapitalAInvertir.Text);
                 _simulado.Dias = Validaciones.ValidarInt(txtDias.Text);
                 _simulado.TipoPlazoFijo = _tipo;
-                txtInteresARecibir.Text = _simulado.Interes.ToString();
-                txtMontoFinal.Text = _simulado.MontoFinal.ToString();
+                txtInteresARecibir.Text = _simulado.Interes.ToString("0.00");
+                txtMontoFinal.Text = _simulado.MontoFinal.ToString("#,##0");
             }
             catch (Exception ex)
             {
@@ -125,6 +125,11 @@ namespace SegundoParcial.Presentacion
         {
             txtMontoTotal.Text = _op.MontoTotal.ToString("#,##0.00");
             txtComisionTotal.Text = _op.Comision.ToString("#,##0.00");
+        }
+
+        private void txtInteresARecibir_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
