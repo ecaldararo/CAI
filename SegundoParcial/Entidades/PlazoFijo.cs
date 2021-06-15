@@ -32,7 +32,7 @@ namespace Entidades
         public int Id { get => id; set => id = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public TipoPlazoFijo TipoPlazoFijo { get => tipoPlazoFijo; set => tipoPlazoFijo = value; }
-
+        //[DataMember(Name ="tipo")]
         public int Tipo { get => tipo; set => tipo = value; }
         public double Tasa { get => tasa; set => tasa = value; }
         public int Dias { get => dias; set => dias = value; }

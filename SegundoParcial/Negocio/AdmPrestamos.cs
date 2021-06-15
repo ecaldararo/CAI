@@ -8,14 +8,14 @@ using Datos;
 
 namespace Negocio
 {
-    public class Controller
+    public class AdmPrestamos
     {
         public PlazoFijoMapper _plazoFijoMapper;
         public List<TipoPlazoFijo> _tiposPF;
         public List<PlazoFijo> _listaPlazosFijos;
         public Operador _operador;
 
-        public Controller()
+        public AdmPrestamos()
         {
             _plazoFijoMapper = new PlazoFijoMapper();
             _operador = new Operador();

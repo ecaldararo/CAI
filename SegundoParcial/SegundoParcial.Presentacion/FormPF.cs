@@ -14,8 +14,8 @@ namespace SegundoParcial.Presentacion
 {
     public partial class FormPF : Form
     {
-        private Controller _operador;
-        private Operador _op;
+        private AdmPrestamos _admPrestamos;
+        private Operador _operador;
         TipoPlazoFijo _tipo;
         PlazoFijo _simulado;
         PlazoFijo _alta;
@@ -23,8 +23,8 @@ namespace SegundoParcial.Presentacion
         {
             InitializeComponent();
             // operador es el controller de la capa de negocio
-            _operador = new Controller();
-            _op = new Operador();
+            _admPrestamos = new AdmPrestamos();
+            _operador = new Operador();
 
         }
 
@@ -46,27 +46,45 @@ namespace SegundoParcial.Presentacion
         }
         private void CargarPF()
         {
-            _op._listaPlazosFijos = _operador.TraerTodos();
+            _operador._listaPlazosFijos = _admPrestamos.TraerTodos();
             
 
-            foreach (PlazoFijo p in _op._listaPlazosFijos)
+            foreach (PlazoFijo p in _operador._listaPlazosFijos)
             {
-                p.Tipo = _operador._tiposPF.FirstOrDefault(x => x.Id == p.Tipo).Id;
-                p.TipoPlazoFijo = _operador._tiposPF.FirstOrDefault(x => x.Id == p.Tipo);
+                if(p.Tipo >= 1 ) // me faltó incluir la validación al dar de alta con campos vacíos, y agregué un pf con tipo 0
+                {
+                    p.Tipo = _admPrestamos._tiposPF.FirstOrDefault(x => x.Id == p.Tipo).Id;
+                    p.TipoPlazoFijo = _admPrestamos._tiposPF.FirstOrDefault(x => x.Id == p.Tipo);
+                }
+                
             }
 
             lstPlazoFijo.DataSource = null;
-            lstPlazoFijo.DataSource = _op._listaPlazosFijos;
+            lstPlazoFijo.DataSource = _operador._listaPlazosFijos;
         }
         private void CargarTiposPF()
         {
             cmbTipoPlazoFijo.DataSource = null;
-            cmbTipoPlazoFijo.DataSource = _operador._tiposPF;
+            cmbTipoPlazoFijo.DataSource = _admPrestamos._tiposPF;
             
         }
         private void CargarTasa()
         {
-            txtTasaInteres.Text = _operador._tiposPF.FirstOrDefault(x => x.Id == _tipo.Id).Tasa.ToString();
+            txtTasaInteres.Text = _admPrestamos._tiposPF.FirstOrDefault(x => x.Id == _tipo.Id).Tasa.ToString();
+        }
+
+        private void Validar()
+        {
+            if (txtTasaInteres.Text == "")
+                throw new Exception("Faltan datos");
+            if (txtCapitalAInvertir.Text == "")
+                throw new Exception("Faltan datos");
+            if (txtDias.Text == "")
+                throw new Exception("Faltan datos");
+            if (txtInteresARecibir.Text == "")
+                throw new Exception("Faltan datos");
+            if (txtMontoFinal.Text == "")
+                throw new Exception("Faltan datos");
         }
 
         private void btnSimular_Click(object sender, EventArgs e)
@@ -104,7 +122,8 @@ namespace SegundoParcial.Presentacion
         {
             try
             {
-                MessageBox.Show(_operador.Alta(_simulado));
+                Validar();
+                MessageBox.Show(_admPrestamos.Alta(_simulado));
                 CargarPF();
 
 
@@ -123,8 +142,8 @@ namespace SegundoParcial.Presentacion
 
         private void lstPlazoFijo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtMontoTotal.Text = _op.MontoTotal.ToString("#,##0.00");
-            txtComisionTotal.Text = _op.Comision.ToString("#,##0.00");
+            txtMontoTotal.Text = _operador.MontoTotal.ToString("#,##0.00");
+            txtComisionTotal.Text = _operador.Comision.ToString("#,##0.00");
         }
     }
 }
