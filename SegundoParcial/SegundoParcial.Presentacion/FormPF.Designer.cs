@@ -103,6 +103,7 @@ namespace SegundoParcial.Presentacion
             this.txtInteresARecibir.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtInteresARecibir.Size = new System.Drawing.Size(123, 21);
             this.txtInteresARecibir.TabIndex = 4;
+            this.txtInteresARecibir.TextChanged += new System.EventHandler(this.txtInteresARecibir_TextChanged);
             // 
             // txtMontoFinal
             // 
@@ -315,7 +316,7 @@ namespace SegundoParcial.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 450);
+            this.ClientSize = new System.Drawing.Size(793, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormPF";
