@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Library;
 using LibreriaBotones;
 
 namespace ProyectoBotones
@@ -11,7 +12,6 @@ namespace ProyectoBotones
     {
         static void Main(string[] args)
         {
-
 
             //Solución en 2 proyectos.
             //- Consola: un menú donde el usuario pueda seleccionar la opción deseada entre(listar botones, agregar botón, eliminar botón, mostrar descripción, salir)
@@ -22,28 +22,51 @@ namespace ProyectoBotones
             //- Hacer una exception custom(ej.BotonYaExistenteException)
 
 
-            List<Boton> listaBotones = new List<Boton>();
+            //List<Boton> listaBotones = new List<Boton>();
+            Controlador controlador = new Controlador();
+
+            controlador.ListaBotones.Add(new Boton("Primero"));
+            controlador.ListaBotones.Add(new Boton("Segundo"));
+            controlador.ListaBotones.Add(new Boton("Tercero"));
+            controlador.ListaBotones.Add(new Boton("Cuarto"));
 
             List<int> ids = new List<int>();
 
-            Menu(listaBotones);
+            //for (int i = 0; i<10; i++)
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine(i);
+            //        if (i == 5)
+            //        {
+            //            int test = Convert.ToInt32(Console.ReadLine());
+            //        }
+            //    }
+            //    catch (Exception)
+            //    {
+            //        Console.WriteLine("Error");
+            //    }
+            //}
+
+            Menu(controlador);
 
             Console.ReadKey();
 
         }
-        public static void Menu(List<Boton> lista)
+        public static void Menu(Controlador con)
         {
             bool exit = false;
 
             while (exit == false)
             {
                 Console.WriteLine(
-                    "***Menu de Botones*** \n" +
-                    "1-Listar Botones \n" +
-                    "2-Agregar Botón \n" +
-                    "3-Eliminar Botón \n" +
-                    "4-Mostrar Descripción \n" +
-                    "5-Salir");
+                    "***************Menu de Botones*************** \n" +
+                    "\t1-\tListar Botones \n" +
+                    "\t2-\tAgregar Botón \n" +
+                    "\t3-\tEliminar Botón \n" +
+                    "\t4-\tMostrar Descripción \n" +
+                    "\t5-\tSalir \n" +
+                    "*********************************************");
 
                 int entrada = 0;
                 bool menu = false;
@@ -65,20 +88,73 @@ namespace ProyectoBotones
                 switch (entrada)
                 {
                     case 1:
-                        Console.WriteLine("\n--Lista de Botones--");
-                        ControladorProgram.Listar(lista);
+                        try
+                        {
+                            Console.WriteLine(con.Listar());
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                         break;
                     case 2:
-                        Console.WriteLine("\n--Agregar Botón--");
-                        ControladorProgram.Agregar(lista);
+                        Console.WriteLine("\n---------- AGREGAR BOTÓN ----------");
+                        bool flag = false;
+                        string descripcion = "";
+                        while (flag == false)
+                        {
+                            Console.WriteLine("\nIngrese la descripción del botón:");
+                            descripcion = Perkins.PedirString();
+                            flag = Validaciones.ValidarStringNoVac(descripcion);
+                        }
+                        
+                        try
+                        {
+                            Console.WriteLine(con.Agregar(descripcion));
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                        
                         break;
                     case 3:
-                        Console.WriteLine("\n--Eliminar Botón--");
-                        ControladorProgram.Eliminar(lista);
+                        Console.WriteLine("\n---------- ELIMINAR BOTÓN ----------");
+                        int codigo;
+                        flag = false;
+                        while(flag == false)
+                        {
+                            codigo = Perkins.PedirInt();
+                            try
+                            {
+                                flag = con.Eliminar(codigo);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                            
+                        }
+                        
                         break;
                     case 4:
-                        Console.WriteLine("\n--Mostrar Descripción--\nIngrese un código");
-                        ControladorProgram.MostrarDescripcion(lista);
+                        Console.WriteLine("\n------------Mostrar Descripción------------");
+                        codigo = -1;
+                        while (codigo == -1)
+                        {
+                            Console.WriteLine("**Ingrese un código**");
+                            codigo = Perkins.PedirInt();
+                            try
+                            {
+                                Console.WriteLine(con.MostrarDescripcion(codigo));
+                            }
+                            catch (Exception ex)
+                            {
+                                codigo = -1;
+                                Console.WriteLine(ex.Message);
+                            }
+                        }
+                        
                         break;
                     case 5:
                         exit = true;
@@ -90,27 +166,14 @@ namespace ProyectoBotones
             }
         }
     }
-        
-    public class Validadores
+
+    public class Perkins
     {
-        public static int PedirInt(int desde, int hasta)
+        public static string PedirString()
         {
+            Console.WriteLine("--- Ingrese un texto ---");
 
-            Console.WriteLine("--- Ingrese un número del " + desde + " al " + hasta + " ---");
-            int salida = 0;
-            do
-            {
-                if (!int.TryParse(Console.ReadLine(), out salida))
-                {
-                    Console.WriteLine("--- El ingreso es inválido, vuelva a intentarlo ---");
-                } else if (salida < desde || salida > hasta)
-                {
-                    throw new IndexOutOfRangeException("Ingresó un número fuera del rango.");
-                    //Console.WriteLine("--- Ingresó un número fuera del rango. Ingrese un número del " + desde + " al " + hasta + " ---");
-                }
-
-
-            } while (salida < desde || salida > hasta);
+            string salida = Console.ReadLine();
 
             return salida;
 
@@ -132,15 +195,6 @@ namespace ProyectoBotones
             return salida;
 
         }
-        public static string PedirString()
-        {
-
-            Console.WriteLine("--- Ingrese un texto ---");
-            
-            string salida = Console.ReadLine();
-
-            return salida;
-
-        }
     }
+    
 }

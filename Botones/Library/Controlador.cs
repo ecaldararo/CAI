@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,21 +9,81 @@ namespace LibreriaBotones
 {
     public class Controlador
     {
-        public static bool Agregar(List<Boton> lista, string descripcion)
+        List<Boton> listaBotones;
+
+        public List<Boton> ListaBotones { get => listaBotones; set => listaBotones = value; }
+
+        public Controlador()
         {
-            /*if (!lista.Exists(item => item.IdBoton == codigo) )
+            listaBotones = new List<Boton>();
+        }
+
+        public string Listar()
+        {
+            if (listaBotones.Count == 0)
+                throw new Exception("No hay botones en la lista.");
+
+            string lst = "\n--Lista de Botones--\n";
+
+            foreach (Boton item in listaBotones)
             {
-                lista.Add(new Boton(descripcion));
-                return true;
+                lst += "Código: " + item.IdBoton + "\t Descripción: " + item.Description + "\n";
+            }
+
+            return lst;
+
+        }
+
+        public string Agregar(string desc)
+        {
+            if (ListaBotones.Exists(x => x.Description == desc))
+            {
+                throw new BotonExistenteException();
             }
             else
             {
-                return false;
-            }*/
+                this.ListaBotones.Add(new Boton(desc));
+                return "Botón agregado exitosamente";
+            }
 
-            lista.Add(new Boton(descripcion));
+        }
+        public bool Eliminar(int codigo)
+        {
+            
+            if (!this.ListaBotones.Exists(item => item.IdBoton == codigo))
+            {
+                throw new BotonInexistenteException();
+            }
+
+            this.ListaBotones.RemoveAll(item => item.IdBoton == codigo);
             return true;
         }
+        public string MostrarDescripcion(int codigo)
+        {
+            if (!this.ListaBotones.Exists(item => item.IdBoton == codigo))
+            {
+                throw new BotonInexistenteException();
+            }
+
+            return "La descripción es: " + this.ListaBotones.Find(item => item.IdBoton == codigo).Description;
+        }
+
+        //public static bool Agregar(List<Boton> lista, string descripcion)
+        //{
+        //    /*if (!lista.Exists(item => item.IdBoton == codigo) )
+        //    {
+        //        lista.Add(new Boton(descripcion));
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }*/
+
+        //    lista.Add(new Boton(descripcion));
+
+        //    return true;
+        //}
 
     }
     

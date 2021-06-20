@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boton.cs" />
+    <Compile Include="Exceptions\BotonInexistenteException.cs" />
+    <Compile Include="Exceptions\BotonExistenteException.cs" />
     <Compile Include="Controlador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones.cs" />
+    <Compile Include="Validadores.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
