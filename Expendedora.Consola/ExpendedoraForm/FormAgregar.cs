@@ -14,8 +14,8 @@ namespace ExpendedoraForm
     
     public partial class FormAgregar : Form
     {
-        private List<Lata> _latas;
-        private Expendedora exp;
+        List<Lata> _latas;
+        Expendedora exp;
         public FormAgregar(Form frm, List<Lata> l, Expendedora e)
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace ExpendedoraForm
             try
             {
                 Validar();
-                exp._latas.Add(new Lata(txtCod.Text, txtNom.Text, (int)numCan.Value));
+                exp._latas.Add(new Lata(txtCod.Text, txtNom.Text, (int)numCan.Value,200,50,"Fanta"));
                 this.Owner.Show();
                 this.Close();
             }

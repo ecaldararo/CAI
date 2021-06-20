@@ -40,18 +40,30 @@ namespace LibreriaExpendedora
 
         }
 
-        public Lata ExtraerLata(string codigo, double dinero)
+        public DevolucionMaquina ExtraerLata(string codigo, double dinero)
         {
             Lata lata;
+            DevolucionMaquina devolucionMaquina;
 
             if (_latas.Exists(x => x.Codigo == codigo))
             {
                 lata = _latas.First(x => x.Codigo == codigo);
 
-                if (_latas.First(x => x.Codigo == codigo).Precio == dinero)
+                devolucionMaquina = new DevolucionMaquina(lata);
+
+                if (lata.Precio <= dinero)
                 {
-                    _dinero += dinero;
-                    //_latas.RemoveAll(x => x.Codigo == codigo);
+                    if (lata.Cantidad > 0)
+                    {
+                        _dinero += lata.Precio;
+                        lata.Cantidad += -1;
+                        devolucionMaquina.Vuelto = dinero - lata.Precio;
+
+                    }
+                    else
+                    {
+                        throw new SinStockException();
+                    }
                 }
                 else
                 {
@@ -62,7 +74,7 @@ namespace LibreriaExpendedora
                 throw new CodigoInvalidoException();
             }
 
-            return lata;
+            return devolucionMaquina;
                 
             
         }
@@ -75,7 +87,7 @@ namespace LibreriaExpendedora
                 cant += i.Cantidad;
             }
             if (_encendida == true)
-                return "Dinero: " + _dinero.ToString() + "\tCantidad: " + cant.ToString();
+                return $"Dinero: {_dinero.ToString()} \tCantidad: {cant.ToString()}";
             else
                 return "";
         }

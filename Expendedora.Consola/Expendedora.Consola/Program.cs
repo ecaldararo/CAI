@@ -9,30 +9,26 @@ namespace ProyectoExpendedora
 {
     class Program
     {
+        static Expendedora exp;
         static void Main(string[] args)
         {
-            Expendedora exp = new Expendedora(); // creo una instancia de expendedora
+            exp = new Expendedora(); // creo una instancia de expendedora
 
-            Lata lata1 = new Lata("1", "Coca", 35);
-            Lata lata2 = new Lata("2", "Sprite", 25);
-            Lata lata3 = new Lata("3", "Fanta", 15);
+            Lata lata1 = new Lata("1", "Coca", 35, 250, 69, "Dulce");
+            Lata lata2 = new Lata("2", "Sprite", 25, 250, 59, "Dulce");
+            Lata lata3 = new Lata("3", "Fanta", 15, 250, 49, "Dulce");
 
             exp._latas.Add(lata1);
             exp._latas.Add(lata2);
             exp._latas.Add(lata3);
 
-            //Console.WriteLine("Máquina Expendedora\nPresione cualquier tecla para encenderla");
-            //Console.ReadKey();
-            //exp.EncenderMaquina(); // se enciende la máquina
-            //Console.WriteLine("***Máquina Encendida***");
-
-            MenuPrincipal(exp);
+            MenuPrincipal();
 
             Console.ReadKey();
 
         }
 
-        public static void MenuPrincipal(Expendedora exp)
+        static void MenuPrincipal()
         {
             int menu = 0;
             do
@@ -53,37 +49,37 @@ namespace ProyectoExpendedora
                 switch (opcion)
                 {
                     case 0:
-                        EncenderMaquina(exp);
+                        EncenderMaquina();
                         break;
                     case 1:
                         if (exp.Encendida == true)
-                            MostrarStock(exp);
+                            MostrarStock();
                         else
-                            Console.WriteLine("Máquina apagada, debe encender la máquina primero");
+                            MaquinaApagada();
                         break;
                     case 2:
                         if (exp.Encendida == true)
-                            IngresarLata(exp);
+                            IngresarLata();
                         else
-                            Console.WriteLine("Máquina apagada, debe encender la máquina primero");
+                            MaquinaApagada();
                         break;
                     case 3:
                         if (exp.Encendida == true)
-                            ExtraerLata(exp);
+                            ExtraerLata();
                         else
-                            Console.WriteLine("Máquina apagada, debe encender la máquina primero"); 
+                            MaquinaApagada();
                         break;
                     case 4:
                         if (exp.Encendida == true)
-                            ObtenerBalance(exp);
+                            ObtenerBalance();
                         else
-                            Console.WriteLine("Máquina apagada, debe encender la máquina primero");
+                            MaquinaApagada();
                         break;
                     case 5:
                         if (exp.Encendida == true)
-                            ObtenerStockDetallado(exp);
+                            ObtenerStockDetallado();
                         else
-                            Console.WriteLine("Máquina apagada, debe encender la máquina primero");
+                            MaquinaApagada();
                         break;
                     case 6:
                         Console.WriteLine("Vuelva Pronto!");
@@ -95,17 +91,25 @@ namespace ProyectoExpendedora
 
         }
 
-        private static void ObtenerStockDetallado(Expendedora exp)
+        private static void MaquinaApagada()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Máquina apagada, debe encender la máquina primero");
         }
 
-        private static void EncenderMaquina(Expendedora expendedora)
+        private static void ObtenerStockDetallado()
         {
-            expendedora.EncenderMaquina();
+            foreach (Lata l in exp._latas)
+            {
+                Console.WriteLine($"CO{l.Codigo}-Nombre:{l.Nombre}/{l.Sabor}-${l.Precio}-Vol.{l.Volumen}-Cantidad:{l.Cantidad}");
+            }
         }
 
-        private static void IngresarLata(Expendedora expendedora)
+        private static void EncenderMaquina()
+        {
+            exp.EncenderMaquina();
+        }
+
+        private static void IngresarLata()
         {
             int other = 1;
             do
@@ -116,11 +120,18 @@ namespace ProyectoExpendedora
                 string nombre = Console.ReadLine();
                 Console.WriteLine("Ingrese la cantidad:");
                 int cantidad = Validadores.PedirIntDesde(0);
-                Lata lata = new Lata(codigo, nombre, cantidad);
+                Console.WriteLine("Ingrese el volumen:");
+                int volumen = Validadores.PedirIntDesde(0);
+                Console.WriteLine("Ingrese el precio:");
+                double precio = Validadores.PedirPrecio();
+                Console.WriteLine("Ingrese el sabor:");
+                string sabor = Console.ReadLine();
+
+                Lata lata = new Lata(codigo, nombre, cantidad,volumen, precio, sabor);
 
                 try
                 {
-                    expendedora.AgregarLata(lata);
+                    exp.AgregarLata(lata);
                 }
                 catch (CapacidadInsuficienteException cie)
                 {
@@ -138,19 +149,19 @@ namespace ProyectoExpendedora
 
         }
 
-        private static void ExtraerLata(Expendedora expendedora)
+        private static void ExtraerLata()
         {
-            MostrarStock(expendedora);
-            Lata lata;
+            MostrarStock();
+            DevolucionMaquina devolucionMaquina;
             int flag = 0;
             while (flag == 0)
             {
                 Console.WriteLine("Ingrese el código de la lata, y el dinero.");
                 try
                 {
-                    lata = expendedora.ExtraerLata(Validadores.PedirCodigo(), Validadores.PedirDinero());
-                    lata.Cantidad += -1;
+                    devolucionMaquina = exp.ExtraerLata(Validadores.PedirCodigo(), Validadores.PedirDinero());
                     Console.WriteLine("========Lata extraída exitosamente.========");
+                    Console.WriteLine(devolucionMaquina.ToString()); ;
                     flag = 1;
                 }
                 catch (DineroInsuficienteException de)
@@ -163,18 +174,18 @@ namespace ProyectoExpendedora
                 }
             }
             
-            MostrarStock(expendedora);
+            MostrarStock();
 
         }
 
-        private static void ObtenerBalance(Expendedora expendedora)
+        private static void ObtenerBalance()
         {
-            Console.WriteLine(expendedora.GetBalance());
+            Console.WriteLine(exp.GetBalance());
         }
-        private static void MostrarStock(Expendedora expendedora)
+        private static void MostrarStock()
         {
             Console.WriteLine("Stock Disponible:");
-            foreach (Lata element in expendedora._latas)
+            foreach (Lata element in exp._latas)
             {
                 Console.WriteLine("CO"+element.Codigo+") "+element.Nombre+" ["+element.Cantidad+"]");
             }
@@ -194,6 +205,12 @@ namespace ProyectoExpendedora
             Console.WriteLine("Ingrese el dinero");
             double dinero = (Double)Int32.Parse(Console.ReadLine());
             return dinero;
+        }
+        public static double PedirPrecio()
+        {
+            Console.WriteLine("Ingrese el precio");
+            double precio = (Double)Int32.Parse(Console.ReadLine());
+            return precio;
         }
         public static int PedirOpcion(int desde, int hasta)
         {

@@ -20,11 +20,11 @@ namespace ExpendedoraForm
             InitializeComponent();
             exp = new Expendedora();
             exp.EncenderMaquina();
-            exp._latas.Add(new Lata("1", "Coca", 20));
-            exp._latas.Add(new Lata("2", "Sprite", 20));
-            exp._latas.Add(new Lata("3", "Fanta", 20));
-            exp._latas.Add(new Lata("4", "Fernet", 20));
-            exp._latas.Add(new Lata("5", "Ron", 20));
+            exp._latas.Add(new Lata("1", "Coca", 20,200,69,"Sin sabor"));
+            exp._latas.Add(new Lata("2", "Sprite", 20, 200, 59, "Sin sabor"));
+            exp._latas.Add(new Lata("3", "Fanta", 20, 200, 49, "Sin sabor"));
+            exp._latas.Add(new Lata("4", "Fernet", 20, 200, 149, "Sin sabor"));
+            exp._latas.Add(new Lata("5", "Ron", 20, 200, 249, "Sin sabor"));
             _latas = exp._latas;
         }
 

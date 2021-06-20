@@ -17,18 +17,19 @@ namespace LibreriaExpendedora
 
         public string Codigo { get { return _codigo; } set { _codigo = value; } }
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public double Precio { get { return _precio; } set { _precio = value; } }
+        public double Precio { get { return _precio; }  }
         public int Cantidad { get { return _cantidad; } set { _cantidad = value; } }
-        public string Sabor { get => _sabor; set => _sabor = value; }
-        public double Volumen { get => _volumen; set => _volumen = value; }
+        public string Sabor { get => _sabor;  }
+        public double Volumen { get => _volumen; }
 
-        public Lata(string codigo, string nombre, int cantidad)
+        public Lata(string codigo, string nombre, int cantidad, int volumen, double precio, string sabor)
         {
             _codigo = codigo;
             _nombre = nombre;
             _cantidad = cantidad;
-            _volumen = 200;
-            _precio = 50;
+            _volumen = volumen;
+            _precio = precio;
+            _sabor = sabor;
         }
 
         private double GetPrecioPorLitro()
