@@ -96,8 +96,8 @@ namespace SegundoParcial.Presentacion
                 _simulado.CapitalInicial = Validaciones.ValidarDouble(txtCapitalAInvertir.Text);
                 _simulado.Dias = Validaciones.ValidarInt(txtDias.Text);
                 _simulado.TipoPlazoFijo = _tipo;
-                txtInteresARecibir.Text = _simulado.Interes.ToString("0.00");
-                txtMontoFinal.Text = _simulado.MontoFinal.ToString("#,##0");
+                txtInteresARecibir.Text = _simulado.Interes.ToString("#,##0.00");
+                txtMontoFinal.Text = _simulado.MontoFinal.ToString("#,##0.00");
             }
             catch (Exception ex)
             {

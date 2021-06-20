@@ -251,7 +251,7 @@ namespace SegundoParcial.Presentacion
             this.panel2.Controls.Add(this.lstPlazoFijo);
             this.panel2.Location = new System.Drawing.Point(378, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(388, 389);
+            this.panel2.Size = new System.Drawing.Size(647, 389);
             this.panel2.TabIndex = 16;
             // 
             // txtComisionTotal
@@ -308,7 +308,7 @@ namespace SegundoParcial.Presentacion
             this.lstPlazoFijo.HorizontalScrollbar = true;
             this.lstPlazoFijo.Location = new System.Drawing.Point(18, 57);
             this.lstPlazoFijo.Name = "lstPlazoFijo";
-            this.lstPlazoFijo.Size = new System.Drawing.Size(351, 251);
+            this.lstPlazoFijo.Size = new System.Drawing.Size(607, 251);
             this.lstPlazoFijo.TabIndex = 0;
             this.lstPlazoFijo.SelectedIndexChanged += new System.EventHandler(this.lstPlazoFijo_SelectedIndexChanged);
             // 
@@ -316,7 +316,7 @@ namespace SegundoParcial.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 450);
+            this.ClientSize = new System.Drawing.Size(1037, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormPF";
