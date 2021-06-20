@@ -1,6 +1,0 @@
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\LibreriaExpendedora\bin\Debug\LibreriaExpendedora.dll
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\LibreriaExpendedora\bin\Debug\LibreriaExpendedora.pdb
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\LibreriaExpendedora\obj\Debug\LibreriaExpendedora.csprojAssemblyReference.cache
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\LibreriaExpendedora\obj\Debug\LibreriaExpendedora.csproj.CoreCompileInputs.cache
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\LibreriaExpendedora\obj\Debug\LibreriaExpendedora.dll
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\LibreriaExpendedora\obj\Debug\LibreriaExpendedora.pdb

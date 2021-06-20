@@ -1,6 +1,0 @@
-H:\Escritorio\GitHub\CAI\VentaRepuestos\Validadores\bin\Debug\Validadores.dll
-H:\Escritorio\GitHub\CAI\VentaRepuestos\Validadores\bin\Debug\Validadores.pdb
-H:\Escritorio\GitHub\CAI\VentaRepuestos\Validadores\obj\Debug\Validadores.csprojAssemblyReference.cache
-H:\Escritorio\GitHub\CAI\VentaRepuestos\Validadores\obj\Debug\Validadores.csproj.CoreCompileInputs.cache
-H:\Escritorio\GitHub\CAI\VentaRepuestos\Validadores\obj\Debug\Validadores.dll
-H:\Escritorio\GitHub\CAI\VentaRepuestos\Validadores\obj\Debug\Validadores.pdb

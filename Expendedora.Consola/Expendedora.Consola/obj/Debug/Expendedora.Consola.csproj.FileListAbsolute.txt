@@ -1,7 +1,0 @@
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\Expendedora.Consola.exe.config
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\Expendedora.Consola.exe
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\bin\Debug\Expendedora.Consola.pdb
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\Expendedora.Consola.csprojAssemblyReference.cache
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\Expendedora.Consola.csproj.CoreCompileInputs.cache
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\Expendedora.Consola.exe
-H:\Escritorio\GitHub\CAI\Expendedora.Consola\Expendedora.Consola\obj\Debug\Expendedora.Consola.pdb

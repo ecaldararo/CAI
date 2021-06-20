@@ -1,6 +1,0 @@
-H:\Escritorio\GitHub\CAI\Facultad\Libreria\bin\Debug\Libreria.dll
-H:\Escritorio\GitHub\CAI\Facultad\Libreria\bin\Debug\Libreria.pdb
-H:\Escritorio\GitHub\CAI\Facultad\Libreria\obj\Debug\Libreria.csprojAssemblyReference.cache
-H:\Escritorio\GitHub\CAI\Facultad\Libreria\obj\Debug\Libreria.csproj.CoreCompileInputs.cache
-H:\Escritorio\GitHub\CAI\Facultad\Libreria\obj\Debug\Libreria.dll
-H:\Escritorio\GitHub\CAI\Facultad\Libreria\obj\Debug\Libreria.pdb

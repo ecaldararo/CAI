@@ -1,9 +1,0 @@
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\bin\Debug\PrimerForm.exe.config
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\bin\Debug\PrimerForm.exe
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\bin\Debug\PrimerForm.pdb
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\obj\Debug\PrimerForm.Form1.resources
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\obj\Debug\PrimerForm.Properties.Resources.resources
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\obj\Debug\PrimerForm.UI.csproj.GenerateResource.cache
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\obj\Debug\PrimerForm.UI.csproj.CoreCompileInputs.cache
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\obj\Debug\PrimerForm.exe
-H:\Escritorio\GitHub\CAI\PrimerForm\PrimerForm\obj\Debug\PrimerForm.pdb
