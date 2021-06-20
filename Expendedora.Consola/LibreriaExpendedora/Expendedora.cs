@@ -15,6 +15,7 @@ namespace LibreriaExpendedora
         private bool _encendida;
 
         public int Capacidad { get => _capacidad;  }
+        public bool Encendida { get => _encendida;  }
 
         public Expendedora()
         {
@@ -86,7 +87,7 @@ namespace LibreriaExpendedora
 
         public void EncenderMaquina()
         {
-            _encendida = true;
+            this._encendida = true;
         }
 
         public bool EstaVacia()

@@ -41,7 +41,7 @@ namespace LibreriaExpendedora
 
         public override string ToString()
         {
-            return $"CO{Codigo}) {Nombre} | Cantidad: {Cantidad} | Precio: {Precio}";
+            return $"CO{Codigo}) {Nombre} | Cantidad: {Cantidad} | Precio: {Precio} | Precio por Litro: {GetPrecioPorLitro().ToString("0.00")}";
         }
 
     }
