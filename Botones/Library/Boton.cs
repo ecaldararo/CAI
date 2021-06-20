@@ -27,8 +27,6 @@ namespace LibreriaBotones
         {
             this.description = desc;
         }
-        //Exception e
-        
 
     }
 }

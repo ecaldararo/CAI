@@ -30,24 +30,6 @@ namespace ProyectoBotones
             controlador.ListaBotones.Add(new Boton("Tercero"));
             controlador.ListaBotones.Add(new Boton("Cuarto"));
 
-            List<int> ids = new List<int>();
-
-            //for (int i = 0; i<10; i++)
-            //{
-            //    try
-            //    {
-            //        Console.WriteLine(i);
-            //        if (i == 5)
-            //        {
-            //            int test = Convert.ToInt32(Console.ReadLine());
-            //        }
-            //    }
-            //    catch (Exception)
-            //    {
-            //        Console.WriteLine("Error");
-            //    }
-            //}
-
             Menu(controlador);
 
             Console.ReadKey();
@@ -74,7 +56,7 @@ namespace ProyectoBotones
                 {
                     try
                     {
-                        entrada = Validadores.PedirInt(1, 5);
+                        entrada = Perkins.PedirInt(1, 5);
                         menu = true;
                     }
                     catch (Exception iex)
@@ -138,7 +120,7 @@ namespace ProyectoBotones
                         
                         break;
                     case 4:
-                        Console.WriteLine("\n------------Mostrar Descripción------------");
+                        Console.WriteLine("\n------------MOSTRAR DESCRIPCIÓN------------");
                         codigo = -1;
                         while (codigo == -1)
                         {
@@ -191,6 +173,29 @@ namespace ProyectoBotones
                 }
 
             } while (salida <= 0);
+
+            return salida;
+
+        }
+
+        public static int PedirInt(int desde, int hasta)
+        {
+
+            Console.WriteLine("--- Ingrese un número del " + desde + " al " + hasta + " ---");
+            int salida = 0;
+            do
+            {
+                if (!int.TryParse(Console.ReadLine(), out salida))
+                {
+                    Console.WriteLine("--- El ingreso es inválido, vuelva a intentarlo ---");
+                }
+                else if (salida < desde || salida > hasta)
+                {
+                    throw new IndexOutOfRangeException("Ingresó un número fuera del rango.");
+                    //Console.WriteLine("--- Ingresó un número fuera del rango. Ingrese un número del " + desde + " al " + hasta + " ---");
+                }
+
+            } while (salida < desde || salida > hasta);
 
             return salida;
 
