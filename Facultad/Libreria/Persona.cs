@@ -14,7 +14,7 @@ namespace Libreria
 
         public string Apellido { get => _apellido; set => _apellido = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public int Edad { get => Validaciones.Validaciones.GetAge(this._fechaNac); }
+        public int Edad { get => (int)Math.Round((DateTime.Now - this._fechaNac).TotalDays/365); }
 
         public abstract string GetCredencial();
         public virtual string GetNombreCompleto()

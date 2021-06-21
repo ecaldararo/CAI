@@ -15,7 +15,7 @@ namespace Libreria
         protected int _legajo;
         protected List<Salario> _salarios;
 
-        public int Antiguedad { get => Validaciones.Validaciones.GetAge(_fechaIngreso); }
+        public int Antiguedad { get => (int)(Math.Round((DateTime.Now - _fechaIngreso).TotalDays)/365); }
         public DateTime FechaIngreso { get => _fechaIngreso; set => _fechaIngreso = value; }
         public int Legajo { get => _legajo; set => _legajo = value; }
         internal List<Salario> Salarios { get => _salarios; set => _salarios = value; }
@@ -56,7 +56,7 @@ namespace Libreria
         }
         public override string GetNombreCompleto()
         {
-            return this.Apellido + " " + this.Nombre;
+            return $"{Apellido}, {Nombre} - Antiguedad: {Antiguedad}";
         }
         public override string ToString()
         {

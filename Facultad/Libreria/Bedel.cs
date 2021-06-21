@@ -26,7 +26,7 @@ namespace Libreria
 
         public override string GetNombreCompleto()
         {
-            return $"Bedel {Apodo}";
+            return $"Bedel {Apodo} - Antiguedad: {Antiguedad}";
         }
     }
 }
