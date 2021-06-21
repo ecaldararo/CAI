@@ -25,6 +25,7 @@ namespace Librerias
         }
 
         public string FechaAsistencia { get => _fechaAsistencia; set => _fechaAsistencia = value; }
+        public Alumno Alumno { get => _alumno; set => _alumno = value; }
 
         public override string ToString()
         {

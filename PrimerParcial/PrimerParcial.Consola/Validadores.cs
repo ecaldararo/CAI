@@ -185,6 +185,31 @@ namespace PrimerParcial.Consola
             return salida;
         }
 
+        public static bool PedirOtraAsistencia()
+        {
+            Console.WriteLine("Desea ingresar una nueva asistencia? \n 1- SI \n 2- NO");
+            int opcion;
+            do
+            {
+                if (!Int32.TryParse(Console.ReadLine(), out opcion))
+                {
+                    Console.WriteLine("Ingreso inválido. Ingrese el número de opción");
+                }
+                else if (opcion < 0 || opcion > 3)
+                {
+                    Console.WriteLine("Opción inválida. Debe ingresar 1 para SI, o 2 para No. Ingrese el número de opción");
+                }
+            } while (opcion < 0 || opcion > 3);
+
+            bool salida;
+            if (opcion == 1)
+                salida = true;
+            else
+                salida = false;
+
+            return salida;
+        }
+
         public static string GetStringInput(string message)
         {
             Console.WriteLine(message);

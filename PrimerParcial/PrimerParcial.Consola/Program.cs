@@ -67,24 +67,51 @@ namespace PrimerParcial.Consola
 
             // para cada alumno solo preguntar si está presente
             List<Asistencia> listaHoy = new List<Asistencia>();
-            foreach (Alumno i in lista)
+
+            bool otro = true;
+            while (otro == true)
             {
-                Console.WriteLine("Tomar asistencia del alumno " + i.ToString());
-
-                // Preguntar si asistió
-                // Si asiste, agregar a listaHoy
-
-                if (i is AlumnoOyente)
-                {
-                    Console.WriteLine("El alumno " + i.ToString() + " es oyente");
-                }
+                int registro = Val.PedirIntDesde(" registro", 0);
+                
+                // si el alumno ya fue ingresado
+                if (listaHoy.Exists(x => x.Alumno.Registro == registro))
+                    Console.WriteLine("Alumno ya ingresado");
+                // si el registro ingresado no existe
+                else if (!lista.Exists(x => x.Registro == registro))
+                    Console.WriteLine("Registro inexistente");
+                // si el alumno es oyente
+                else if (lista.FirstOrDefault(x => x.Registro == registro) is AlumnoOyente)
+                    Console.WriteLine("El alumno " + lista.FirstOrDefault(x => x.Registro == registro).ToString() + " es oyente");
+                // sino registra
                 else
                 {
+                    Alumno i = lista.FirstOrDefault(x => x.Registro == registro);
                     bool rta = Val.PedirOpcionSINO();
                     Asistencia asist = new Asistencia(p, fecha, i, rta);
                     listaHoy.Add(asist);
                 }
+                otro = Val.PedirOtraAsistencia();
             }
+            
+
+            //foreach (Alumno i in lista)
+            //{
+            //    Console.WriteLine("Tomar asistencia del alumno " + i.ToString());
+
+            //    // Preguntar si asistió
+            //    // Si asiste, agregar a listaHoy
+
+            //    if (i is AlumnoOyente)
+            //    {
+            //        Console.WriteLine("El alumno " + i.ToString() + " es oyente");
+            //    }
+            //    else
+            //    {
+            //        bool rta = Val.PedirOpcionSINO();
+            //        Asistencia asist = new Asistencia(p, fecha, i, rta);
+            //        listaHoy.Add(asist);
+            //    }
+            //}
             // agrego la lista de asistencia
             try
             {
