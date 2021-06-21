@@ -41,15 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlumnoOyente.cs" />
-    <Compile Include="AlumnoRegular.cs" />
+    <Compile Include="Personas\AlumnoOyente.cs" />
+    <Compile Include="Personas\AlumnoRegular.cs" />
     <Compile Include="Asistencia.cs" />
-    <Compile Include="Alumno.cs" />
+    <Compile Include="Personas\Alumno.cs" />
     <Compile Include="Exceptions\SinAlumnosRegistradosException.cs" />
     <Compile Include="Exceptions\AsistenciaInconsistenteException.cs" />
     <Compile Include="Exceptions\AsistenciaExistenteEseDiaException.cs" />
-    <Compile Include="Preceptor.cs" />
-    <Compile Include="Persona.cs" />
+    <Compile Include="Personas\Preceptor.cs" />
+    <Compile Include="Personas\Persona.cs" />
     <Compile Include="Presentismo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
