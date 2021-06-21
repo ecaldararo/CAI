@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Perkins.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\Libreria\Libreria.csproj">
       <Project>{e883564d-a433-4755-998f-38c0ef06deef}</Project>
       <Name>Libreria</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Validaciones\Validaciones.csproj">
+      <Project>{9864a8a9-dfbd-4243-b422-937f499fd9d2}</Project>
+      <Name>Validaciones</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

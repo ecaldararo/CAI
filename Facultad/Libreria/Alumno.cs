@@ -29,5 +29,24 @@ namespace Libreria
         {
             return GetCredencial();
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() == typeof(Alumno))
+            {
+                if(this.Codigo == ((Alumno)obj).Codigo)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
     }
 }

@@ -8,15 +8,6 @@ namespace Libreria
 {
     public static class Perkins
     {
-        public static Int32 GetAge(this DateTime dateOfBirth)
-        {
-            var today = DateTime.Today;
-
-            var a = (today.Year * 100 + today.Month) * 100 + today.Day;
-            var b = (dateOfBirth.Year * 100 + dateOfBirth.Month) * 100 + dateOfBirth.Day;
-
-            return (a - b) / 10000;
-        }
         public static int PedirOpcion(int desde, int hasta)
         {
             Console.WriteLine("Ingrese el número de opción");
@@ -108,6 +99,21 @@ namespace Libreria
             } while (numero < desde);
 
             return numero;
+        }
+
+        public static double PedirSalario()
+        {
+            Console.WriteLine("Ingrese un salario..");
+            double salario = -1;
+            while (salario < 0)
+            {
+                if (!Double.TryParse(Console.ReadLine(), out salario))
+                {
+                    Console.WriteLine("Ingreso inválido. Ingrese un número. Debe ser positivo.");
+                }
+            };
+
+            return salario;
         }
     }
 }

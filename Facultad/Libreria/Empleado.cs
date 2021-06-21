@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Validaciones;
+
 
 namespace Libreria
 {
@@ -13,7 +15,7 @@ namespace Libreria
         protected int _legajo;
         protected List<Salario> _salarios;
 
-        public int Antiguedad { get => Perkins.GetAge(_fechaIngreso); }
+        public int Antiguedad { get => Validaciones.Validaciones.GetAge(_fechaIngreso); }
         public DateTime FechaIngreso { get => _fechaIngreso; set => _fechaIngreso = value; }
         public int Legajo { get => _legajo; set => _legajo = value; }
         internal List<Salario> Salarios { get => _salarios; set => _salarios = value; }
@@ -37,16 +39,20 @@ namespace Libreria
         }
         public override bool Equals(Object obj)
         {
-            Empleado emp = (Empleado)obj; // puede fallar al intentar castear
-            
-            if (this.Legajo == emp.Legajo)
-                return true;
-            else
+            if (obj == null)
                 return false;
+            if (!(obj is Empleado))
+                return false;
+            
+            return this.Legajo == ((Empleado)obj).Legajo;
+            
         }
         public override string GetCredencial()
         {
-            return $"{this.Legajo} - {this.GetNombreCompleto()}, salario {this.UltimoSalario.Bruto}";
+            if(Salarios.Count==0)
+                return $"{this.Legajo} - {this.GetNombreCompleto()}, salario NA";
+            else
+                return $"{this.Legajo} - {this.GetNombreCompleto()}, salario {this.UltimoSalario.Bruto}";
         }
         public override string GetNombreCompleto()
         {

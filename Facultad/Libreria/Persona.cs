@@ -14,12 +14,11 @@ namespace Libreria
 
         public string Apellido { get => _apellido; set => _apellido = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public int Edad { get => Perkins.GetAge(this._fechaNac); }
+        public int Edad { get => Validaciones.Validaciones.GetAge(this._fechaNac); }
 
         public abstract string GetCredencial();
         public virtual string GetNombreCompleto()
         {
-            //return this.Apellido + " " + this.Nombre;
             return $"{Apellido}, {Nombre}";
             
         }

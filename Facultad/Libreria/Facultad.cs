@@ -16,13 +16,13 @@ namespace Libreria
         public Facultad(int cantSedes, string nombre)
         {
             _alumnos = new List<Alumno>();
-            CantSedes = cantSedes;
+            _cantSedes = cantSedes;
             _empleados = new List<Empleado>();
-            Nombre = nombre;
+            _nombre = nombre;
         }
 
-        public int CantSedes { get => _cantSedes; set => _cantSedes = value; }
-        public string Nombre { get => _nombre; set => _nombre = value; }
+        public int CantSedes { get => _cantSedes; }
+        public string Nombre { get => _nombre;  }
 
         public void AgregarAlumno(Alumno alu)
         {
@@ -60,12 +60,15 @@ namespace Libreria
             if (tipoEmpleado == (int)TipoEmpleado.Bedel)
             {
                 Bedel bed = new Bedel(apodo, legajo, nombre, apellido, fechaNac, fechaIng);
-                Empleado emp = _empleados.FirstOrDefault(x => x.Legajo == legajo);
+                //Empleado emp = _empleados.FirstOrDefault(x => x.Legajo == legajo);
+                foreach(Empleado e in _empleados)
+                {
+                    if (bed.Equals(e)) // Equals ?? Duplico el mismo chequeo.
+                        throw new EmpleadoExistenteException();
+                }
 
-                if (bed.Equals(emp)) // Equals ?? Duplico el mismo chequeo.
-                    throw new EmpleadoExistenteException();
-                else
-                    _empleados.Add(emp);
+                _empleados.Add(bed);
+
             } 
             else if (tipoEmpleado == (int)TipoEmpleado.Docente)
             {
@@ -82,6 +85,13 @@ namespace Libreria
                 throw new TipoEmpleadoIncorrectoException();
             }
             
+        }
+        public void AgregarSalario(int legajo, Salario sal)
+        {
+            if (_empleados.Exists(x => x.Legajo == legajo))
+                _empleados.SingleOrDefault(x => x.Legajo == legajo).AgregarSalario(sal);
+            else
+                throw new EmpleadoInexistenteException();
         }
         public void EliminarAlumno(int codigo)
         {

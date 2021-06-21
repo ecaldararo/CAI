@@ -137,7 +137,7 @@ namespace Facultad.Consola
                         try
                         {
                             List<Empleado> listaEmp = fac.TraerEmpleados();
-                            fac.AgregarEmpleado("", Perkins.PedirIntDesde(listaEmp.Last().Legajo + 1), Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52), (int)TipoEmpleado.Directivo);
+                            fac.AgregarEmpleado("", Perkins.PedirIntDesde(listaEmp.Last().Legajo), Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52), (int)TipoEmpleado.Directivo);
                         }
                         catch (EmpleadoExistenteException eex)
                         {
@@ -146,7 +146,29 @@ namespace Facultad.Consola
                         break;
                     case 7:
                         Console.WriteLine("Agregar Salario");
+                        try
+                        {
+                            // pedir legajo
+                            List<Empleado> listaEmp = fac.TraerEmpleados();
+                            int legajo = 0;
+                            bool flag = false;
+                            while(flag == false)
+                            {
+                                legajo = Perkins.PedirIntDesde(0);
+                                if (listaEmp.Exists(x => x.Legajo == legajo))
+                                    flag = true;
+                            }
+                            // pedir datos salario (salario bruto, codigo transferencia)
+                            double salario = Perkins.PedirSalario();
+                            
+                            fac.AgregarSalario(legajo,new Salario(salario,"2222",DateTime.Now));
 
+                            
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
                         break;
                 }
             } while (opcion != 8);
