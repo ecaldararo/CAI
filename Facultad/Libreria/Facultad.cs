@@ -34,11 +34,6 @@ namespace Libreria
         public void AgregarEmpleado(Empleado emp)
         {
             
-            /*if (_empleados.Contains(emp))
-                throw new EmpleadoExistenteException();
-            else
-                _empleados.Add(emp);*/
-
             foreach(Empleado e in _empleados)
             {
                 if (e.Equals(emp))
@@ -63,7 +58,7 @@ namespace Libreria
                 //Empleado emp = _empleados.FirstOrDefault(x => x.Legajo == legajo);
                 foreach(Empleado e in _empleados)
                 {
-                    if (bed.Equals(e)) // Equals ?? Duplico el mismo chequeo.
+                    if (bed.Equals(e)) 
                         throw new EmpleadoExistenteException();
                 }
 
@@ -72,13 +67,23 @@ namespace Libreria
             } 
             else if (tipoEmpleado == (int)TipoEmpleado.Docente)
             {
-                Docente emp = new Docente(legajo, nombre, apellido, fechaNac, fechaIng);
-                _empleados.Add(emp);
+                Docente doc = new Docente(legajo, nombre, apellido, fechaNac, fechaIng);
+                foreach (Empleado e in _empleados)
+                {
+                    if (doc.Equals(e)) 
+                        throw new EmpleadoExistenteException();
+                }
+                _empleados.Add(doc);
             }
             else if (tipoEmpleado == (int)TipoEmpleado.Directivo)
             {
-                Directivo emp = new Directivo(legajo, nombre, apellido, fechaNac, fechaIng);
-                _empleados.Add(emp);
+                Directivo dir = new Directivo(legajo, nombre, apellido, fechaNac, fechaIng);
+                foreach (Empleado e in _empleados)
+                {
+                    if (dir.Equals(e)) 
+                        throw new EmpleadoExistenteException();
+                }
+                _empleados.Add(dir);
             }
             else
             {

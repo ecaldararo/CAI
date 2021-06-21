@@ -113,7 +113,7 @@ namespace Facultad.Consola
                         try
                         {
                             List<Empleado> listaEmp = fac.TraerEmpleados();
-                            fac.AgregarEmpleado(Perkins.PedirStringNoVac(" un apodo"),Perkins.PedirIntDesde(listaEmp.Last().Legajo+1),Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52),(int)TipoEmpleado.Bedel);
+                            fac.AgregarEmpleado(Perkins.PedirStringNoVac(" un apodo"),Perkins.PedirIntDesde(listaEmp.Last().Legajo),Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52),(int)TipoEmpleado.Bedel);
                         }
                         catch (EmpleadoExistenteException eex)
                         {
@@ -125,7 +125,7 @@ namespace Facultad.Consola
                         try
                         {
                             List<Empleado> listaEmp = fac.TraerEmpleados();
-                            fac.AgregarEmpleado("", Perkins.PedirIntDesde(listaEmp.Last().Legajo + 1), Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52), (int)TipoEmpleado.Docente);
+                            fac.AgregarEmpleado("", Perkins.PedirIntDesde(listaEmp.Last().Legajo), Perkins.PedirStringNoVac("un nombre"), Perkins.PedirStringNoVac("un apellido"), new DateTime(1950, 5, 1, 8, 30, 52), new DateTime(2000, 5, 1, 8, 30, 52), (int)TipoEmpleado.Docente);
                         }
                         catch (EmpleadoExistenteException eex)
                         {

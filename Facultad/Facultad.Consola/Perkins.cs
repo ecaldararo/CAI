@@ -92,11 +92,11 @@ namespace Libreria
                 {
                     Console.WriteLine("Ingreso inválido. Ingrese un número.");
                 }
-                else if (numero < desde)
+                else if (numero <= desde)
                 {
                     Console.WriteLine("Opción inválida. Debe ingresar un número mayor a " + desde);
                 }
-            } while (numero < desde);
+            } while (numero <= desde);
 
             return numero;
         }
