@@ -11,7 +11,7 @@ namespace Librerias
     {
 
         private List<Preceptor> _preceptores;
-        private static List<Alumno> _alumnos;
+        private List<Alumno> _alumnos;
         private List<Asistencia> _asistencias;
 
 
@@ -56,7 +56,7 @@ namespace Librerias
             Preceptor preceptor = _preceptores.SingleOrDefault(x => x.Activo == true); // puede fallar
             return preceptor;
         }
-        public static List<Alumno> GetListaAlumnos()
+        public List<Alumno> GetListaAlumnos()
         {
             return _alumnos;
         }

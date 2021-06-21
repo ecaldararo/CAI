@@ -35,6 +35,9 @@ namespace PrimerParcial.Consola
                     case "2":
                         MostrarAsistencia();
                         break;
+                    case "3":
+                        ListarAlumnos();
+                        break;
                     case "X":
                         menu = true;
                         break;
@@ -45,10 +48,20 @@ namespace PrimerParcial.Consola
             } while (menu == false);
             
         }
+
+        static void ListarAlumnos()
+        {
+            foreach(Alumno a in _presentismo.GetListaAlumnos())
+            {
+                Console.WriteLine(a.ToString());
+            }
+        }
+
         static void DesplegarOpcionesMenu()
         {
             Console.WriteLine("1) Tomar Asistencia");
             Console.WriteLine("2) Mostrar Asistencia");
+            Console.WriteLine("3) Listar Alumnos");
             Console.WriteLine("X: Terminar");
         }
         static void TomarAsistencia(Preceptor p)
@@ -56,7 +69,7 @@ namespace PrimerParcial.Consola
             // Ingreso fecha
             string fecha = Val.PedirFecha();
             // Listar los alumnos
-            List<Alumno> lista = Presentismo.GetListaAlumnos();
+            List<Alumno> lista = _presentismo.GetListaAlumnos();
 
             Console.WriteLine("---Lista de alumnos---");
             foreach (Alumno i in lista)

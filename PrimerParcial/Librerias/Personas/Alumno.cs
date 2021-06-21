@@ -8,13 +8,13 @@ namespace Librerias
 {
     public abstract class Alumno : Persona
     {
-        private int _registro;
+        protected int _registro;
 
-        public int Registro { get => _registro; set => _registro = value; }
+        public int Registro { get => _registro; }
 
         internal override string Display()
         {
-            return $"{this._nombre} ({this.Registro})";
+            return $"{this._nombre} ({this._registro})";
         }
     }
 }

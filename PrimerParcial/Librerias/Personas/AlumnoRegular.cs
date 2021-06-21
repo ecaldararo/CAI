@@ -11,7 +11,7 @@ namespace Librerias
         private string _email;
         public AlumnoRegular(int registro, string nombre, string apellido, string email)
         {
-            Registro = registro;
+            _registro = registro;
             _nombre = nombre;
             _apellido = apellido;
             _email = email;

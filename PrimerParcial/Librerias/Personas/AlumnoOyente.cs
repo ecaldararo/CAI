@@ -10,7 +10,7 @@ namespace Librerias
     {
         public AlumnoOyente(int registro, string nombre, string apellido)
         {
-            Registro = registro;
+            _registro = registro;
             _nombre = nombre;
             _apellido = apellido;
         }
