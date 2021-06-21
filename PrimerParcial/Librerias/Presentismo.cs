@@ -34,13 +34,9 @@ namespace Librerias
         private bool AsistenciaRegistrada(string fecha)
         {
             if (this._asistencias.Exists(x => x.FechaAsistencia == fecha))
-            {
-                throw new AsistenciaExistenteEseDiaException(); 
-            }
+                return true; 
             else
-            {
                 return false;
-            }
 
         }
         
@@ -70,15 +66,12 @@ namespace Librerias
 
             int cant = GetCantidadAlumnosRegulares();
 
-            if (cant == listaHoy.Count())
-            {
-                if (AsistenciaRegistrada(fecha) == false)
-                    _asistencias.AddRange(listaHoy);
-            }
-            else
-            {
+            if (cant != listaHoy.Count())
                 throw new AsistenciaInconsistenteException();
-            }
+            if (AsistenciaRegistrada(fecha) == true)
+                throw new AsistenciaExistenteEseDiaException();
+            
+            _asistencias.AddRange(listaHoy);
             
         }
         

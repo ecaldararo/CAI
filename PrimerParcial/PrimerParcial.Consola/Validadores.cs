@@ -139,7 +139,8 @@ namespace PrimerParcial.Consola
             string texto = "";
             do
             {
-                if (String.IsNullOrEmpty(Console.ReadLine()))
+                texto = Console.ReadLine();
+                if (String.IsNullOrEmpty(texto))
                 {
                     Console.WriteLine("Error. No ingresó nada. Vuelva a intentarlo.");
                     texto = "";

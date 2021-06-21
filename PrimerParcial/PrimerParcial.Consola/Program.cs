@@ -26,7 +26,7 @@ namespace PrimerParcial.Consola
             do
             {
                 DesplegarOpcionesMenu();
-                string opcionMenu = Val.PedirOpcion("1", "2", "X"); // pedir el valor
+                string opcionMenu = Val.PedirStringNoVac(); // pedir el valor
                 switch (opcionMenu)
                 {
                     case "1":
@@ -39,6 +39,7 @@ namespace PrimerParcial.Consola
                         menu = true;
                         break;
                     default:
+                        Console.WriteLine("Ingrese una opción del menu");
                         break;
                 }
             } while (menu == false);
