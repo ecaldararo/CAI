@@ -8,5 +8,11 @@ namespace Libreria
 {
     public class Cliente
     {
+        public int Codigo;
+        public string Apellido;
+        public string Nombre;
+
+
+
     }
 }

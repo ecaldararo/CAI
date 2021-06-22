@@ -9,13 +9,17 @@ namespace Libreria
     public class TiendaRopa
     {
         private List<Indumentaria> _inventario;
+        private List<Venta> _ventas;
+        private int _ultimoCodigo;
 
-        public List<Indumentaria> Inventario { get => _inventario; set => _inventario = value; }
 
         public TiendaRopa()
         {
-            Inventario = new List<Indumentaria>();
+            _inventario = new List<Indumentaria>();
+            _ventas = new List<Venta>();
+
         }
+
 
         
     }

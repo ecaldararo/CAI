@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Indumentaria\Camisa.cs" />
     <Compile Include="Indumentaria\Pantalon.cs" />
     <Compile Include="Indumentaria\IndumentariaCasual.cs" />

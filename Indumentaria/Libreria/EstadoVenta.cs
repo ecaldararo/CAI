@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Libreria
 {
-    public class EstadoVenta
+    public enum EstadoVenta
     {
+        Iniciada, Procesada, Devuelto
     }
 }
