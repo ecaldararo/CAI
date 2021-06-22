@@ -49,7 +49,7 @@ namespace Entidades
             if (_adhesiones.Count > 0)
                 return _adhesiones.LastOrDefault().NroOrden;
             else
-                return 1;
+                return 0;
         }
 
         public Reclutadora GetReclutadoraLogueada()
