@@ -49,7 +49,7 @@ namespace Entidades
             if (_adhesiones.Count > 0)
                 return _adhesiones.LastOrDefault().NroOrden;
             else
-                throw new Exception("No hay comercios adheridos");
+                return 1;
         }
 
         public Reclutadora GetReclutadoraLogueada()
@@ -79,7 +79,11 @@ namespace Entidades
             if (_adhesiones.Exists(x => x.Comercio == ad.Comercio))
                 throw new AdhesionExistenteException();
             else
+            {
+                int nro = GetUltimoNroOrden();
+                ad.NroOrden = nro+1;
                 _adhesiones.Add(ad);
+            }
         }
 
         public void EliminarAdhesion(string cuit)

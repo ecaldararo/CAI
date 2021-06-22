@@ -13,7 +13,7 @@ namespace Entidades.Entidades
 
         public override string ToString()
         {
-            return base.ToString();
+            return Display();
         }
 
         internal abstract string Display();

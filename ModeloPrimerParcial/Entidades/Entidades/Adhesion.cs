@@ -25,14 +25,14 @@ namespace Entidades
         }
         public Adhesion(Comercio comercio, Reclutadora reclutadora)
         {
-            id++;
-            _nroOrden = id;
+            //id++;
+            //_nroOrden = id;
             _comercio = comercio;
             _reclutadora = reclutadora;
             _fechaHoraAdhesion = DateTime.Now;
         }
 
-        public int NroOrden { get => _nroOrden;  }
+        public int NroOrden { get => _nroOrden; set => _nroOrden = value; }
         public Comercio Comercio { get => _comercio; }
 
         public override string ToString()

@@ -20,6 +20,7 @@ namespace Entidades.Entidades
             return $"{_razonSocial}({_cuit}) - {_nroHabilitacion}";
         }
 
+        // hereda el to string, innecesario
         public override string ToString()
         {
             return Display();
