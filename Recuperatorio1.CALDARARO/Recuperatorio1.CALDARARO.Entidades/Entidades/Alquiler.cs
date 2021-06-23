@@ -14,20 +14,23 @@ namespace Recuperatorio1.CALDARARO.Entidades.Entidades
         private EquipoMovil _equipoMovil;
         private bool _devuelto;
         private double _montoTotal;
+        private int _horas;
 
         public Alquiler(int dni, PuntoAlquiler punto, EquipoMovil equipo, int horas)
         {
             _dni = dni;
             _puntoAlquiler = punto;
             _equipoMovil = equipo;
-            _devuelto = false;
+            _devuelto = true;
+            _horas = horas;
 
         }
 
+        public int Horas { get => _horas; }
         internal EquipoMovil EquipoMovil { get => _equipoMovil;  }
-        internal bool Devuelto { get => _devuelto;  }
+        internal bool Devuelto { get => _devuelto; set => _devuelto = value; }
         internal int Dni { get => _dni;  }
-        internal int NroAlquiler { get => _nroAlquiler;  }
+        internal int NroAlquiler { get => _nroAlquiler; set => _nroAlquiler = value; }
 
         public override string ToString()
         {

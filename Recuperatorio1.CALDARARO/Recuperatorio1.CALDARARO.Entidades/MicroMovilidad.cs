@@ -51,9 +51,6 @@ namespace Recuperatorio1.CALDARARO.Entidades
 
         }
 
-
-
-
         public List<Alquiler> Alquileres { get => _alquileres;  }
         public List<EquipoMovil> Equipos { get => _equipos;  }
         public string NombreEmpresa { get => _nombreEmpresa;  }
@@ -70,12 +67,13 @@ namespace Recuperatorio1.CALDARARO.Entidades
         private bool AlquilerEnCursoDNI(int dni)
         {
             if (_alquileres.Count == 0)
-                throw new Exception("No hay alquileres para ese DNI");
+                return false;
             if (!_alquileres.Exists(x => x.Dni == dni))
-                throw new AlquilerNoExistenteException();
+                return false;
 
             List<Alquiler> _alqDNI = _alquileres.Where(x => x.Dni == dni).ToList();
-            if (_alqDNI.SingleOrDefault(x => x.Devuelto == false) == null)
+            
+            if (_alqDNI.Exists(x => x.Devuelto == false))
                 throw new AlquilerEnCursoException();
             else
                 return false;
@@ -84,8 +82,8 @@ namespace Recuperatorio1.CALDARARO.Entidades
 
         private bool AlquilerEnCursoEquipo(int nroSerie)
         {
-            //if (_alquileres.Count == 0)
-            //    throw new Exception("No hay alquileres de ese equipo");
+            if (_alquileres.Count == 0)
+                return false;
 
             //if (_alquileres.Exists(x => x.EquipoMovil.NroSerie == nroSerie))
 
@@ -110,14 +108,33 @@ namespace Recuperatorio1.CALDARARO.Entidades
 
         public void AltaAlquiler(Alquiler alquiler)
         {
-            if (AlquilerEnCursoEquipo(alquiler.EquipoMovil.NroSerie) == false && AlquilerEnCursoDNI(alquiler.Dni) == false) 
+            if (AlquilerEnCursoEquipo(alquiler.EquipoMovil.NroSerie) == false && AlquilerEnCursoDNI(alquiler.Dni) == false)
+            {
+                alquiler.NroAlquiler = GetUltimoNroAlquiler() + 1;
+                alquiler.Devuelto = false;
                 _alquileres.Add(alquiler);
+            }
             
         }
 
         public double BajaAlquiler(int dni, int bateria)
         {
-            throw new NotImplementedException();
+            Alquiler baja = _alquileres.FirstOrDefault(x => x.Dni == dni);
+
+            if (_alquileres.Exists(x => x.Dni == dni))
+            {
+                baja.Devuelto = true;
+                _alquileres.Remove(baja);
+                if(bateria > baja.EquipoMovil.Bateria)
+                    return baja.EquipoMovil.PrecioPorHora * baja.Horas * 0.90;
+                else
+                    return baja.EquipoMovil.PrecioPorHora * baja.Horas;
+                //faltan las horas, no se guardan en ningún lado
+            }
+            else
+            {
+                throw new AlquilerNoExistenteException();
+            }
         }
 
 

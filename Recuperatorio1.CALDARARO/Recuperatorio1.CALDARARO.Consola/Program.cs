@@ -17,11 +17,10 @@ namespace Recuperatorio1.CALDARARO.Consola
 
         static Program()
         {
-            
+            _empresa = new MicroMovilidad("E - Mobility");
         }
         static void Main(string[] args)
         {
-            _empresa = new MicroMovilidad("E - Mobility");
 
             PuntoAlquiler punto = _empresa.GetPuntoAlquiler("Belgrano");
 
@@ -71,10 +70,13 @@ namespace Recuperatorio1.CALDARARO.Consola
         static void ListarAlquileres()
         {
             // mostrar alquileres
-            foreach(Alquiler a in _empresa.Alquileres)
-            {
-                Console.WriteLine(a.ToString());
-            }
+            if (_empresa.Alquileres.Count == 0)
+                Console.WriteLine("No hay alquileres");
+            else
+                foreach (Alquiler a in _empresa.Alquileres)
+                {
+                    Console.WriteLine(a.ToString());
+                }
         }
 
         static void AlquilarEquipo(PuntoAlquiler punto)
@@ -132,6 +134,10 @@ namespace Recuperatorio1.CALDARARO.Consola
             {
                 Console.WriteLine(eaex.Message);
             }
+            catch (AlquilerEnCursoException aecex)
+            {
+                Console.WriteLine(aecex.Message);
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -141,9 +147,29 @@ namespace Recuperatorio1.CALDARARO.Consola
         static void DevolverEquipo()
         {
             // Ingreso DNI cliente
+            int DNI = ValidacionesConsola.PedirIntDesde(" DNI", 0);
             // Ingreso batería
+            int bateria = ValidacionesConsola.PedirIntDesde(" batería", 0);
+            double monto;
             // BajaAlquier
+            try
+            {
+                // double innecesario
+                monto = _empresa.BajaAlquiler(DNI,bateria);
+                Console.WriteLine("Baja exitosa");
+                Console.WriteLine("Monto total a debitar: " + monto.ToString("0.00"));
+            }
+            catch (AlquilerNoExistenteException aneex)
+            {
+                Console.WriteLine(aneex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             // Se le muestra el monto total a debitar en formato .ToString(“0.00”)
+            
+
 
         }
 
