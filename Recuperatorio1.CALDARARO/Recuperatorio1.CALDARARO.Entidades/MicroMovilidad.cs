@@ -111,7 +111,7 @@ namespace Recuperatorio1.CALDARARO.Entidades
             if (AlquilerEnCursoEquipo(alquiler.EquipoMovil.NroSerie) == false && AlquilerEnCursoDNI(alquiler.Dni) == false)
             {
                 alquiler.NroAlquiler = GetUltimoNroAlquiler() + 1;
-                alquiler.Devuelto = false;
+                //alquiler.Devuelto = false;
                 _alquileres.Add(alquiler);
             }
             
@@ -124,7 +124,7 @@ namespace Recuperatorio1.CALDARARO.Entidades
             if (_alquileres.Exists(x => x.Dni == dni))
             {
                 baja.Devuelto = true;
-                _alquileres.Remove(baja);
+                //_alquileres.Remove(baja);
                 if(bateria > baja.EquipoMovil.Bateria)
                     return baja.EquipoMovil.PrecioPorHora * baja.Horas * 0.90;
                 else

@@ -154,7 +154,6 @@ namespace Recuperatorio1.CALDARARO.Consola
             // BajaAlquier
             try
             {
-                // double innecesario
                 monto = _empresa.BajaAlquiler(DNI,bateria);
                 Console.WriteLine("Baja exitosa");
                 Console.WriteLine("Monto total a debitar: " + monto.ToString("0.00"));

@@ -21,7 +21,7 @@ namespace Recuperatorio1.CALDARARO.Entidades.Entidades
             _dni = dni;
             _puntoAlquiler = punto;
             _equipoMovil = equipo;
-            _devuelto = true;
+            _devuelto = false;
             _horas = horas;
 
         }
@@ -35,7 +35,6 @@ namespace Recuperatorio1.CALDARARO.Entidades.Entidades
         public override string ToString()
         {
             string dev = "NO está";
-            _devuelto = false;
             if (_devuelto == true)
                 dev = "está";
 
